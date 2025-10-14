@@ -1,0 +1,1 @@
+dotnet antlr4-tool -o QueryEngine/Parser/Antlr -Dlanguage=CSharp -visitor -package QoreDB.QueryEngine.Parser.Antlr QoreDB/QueryEngine/Parser/Sql.g4

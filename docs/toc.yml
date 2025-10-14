@@ -1,0 +1,18 @@
+- name: Introduction
+  href: introduction.md
+- name: Getting Started
+  href: getting-started.md
+- name: Architecture
+  href: architecture.md
+- name: TUI Shell
+  href: tui-shell.md
+- name: SQL Reference
+  href: sql-reference.md
+- name: Query Engine
+  href: query-engine/
+- name: Storage Engine
+  href: storage-engine/
+- name: Catalog Manager
+  href: catalog-manager.md
+- name: Contributing
+  href: contributing.md

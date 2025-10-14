@@ -1,0 +1,18 @@
+# .NET Core
+.DS_Store
+/bin/
+/obj/
+.user
+.suo
+/TestResults
+
+# DocFX
+_site/
+api/
+
+# Database
+qore.db
+
+# Rider
+.idea/
+*.sln.iml

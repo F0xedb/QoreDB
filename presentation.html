@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QoreDB: A Look Inside an Educational SQL Database Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            /* bg-gray-900 */
+            color: #F9FAFB;
+            /* text-gray-50 */
+        }
+
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            visibility: hidden;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+            visibility: visible;
+        }
+
+        .slide-content {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.75rem;
+            /* text-6xl */
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            /* text-4xl */
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        p,
+        li {
+            font-size: 1.25rem;
+            /* text-xl */
+            line-height: 1.75;
+            color: #D1D5DB;
+            /* text-gray-300 */
+        }
+
+        .code-block {
+            background-color: #1F2937;
+            /* bg-gray-800 */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            /* rounded-lg */
+            text-align: left;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            border: 1px solid #374151;
+            /* border-gray-700 */
+            margin-top: 1.5rem;
+            max-height: 50vh;
+        }
+
+        .code-block code {
+            white-space: pre;
+        }
+
+        .nav-button {
+            position: absolute;
+            bottom: 2rem;
+            background-color: #374151;
+            /* bg-gray-700 */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            /* rounded-full */
+            cursor: pointer;
+            transition: background-color 0.2s;
+            z-index: 10;
+        }
+
+        .nav-button:hover {
+            background-color: #4B5563;
+            /* bg-gray-600 */
+        }
+
+        #prev-btn {
+            left: 2rem;
+        }
+
+        #next-btn {
+            right: 2rem;
+        }
+
+        .slide-counter {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #9CA3AF;
+            /* text-gray-400 */
+            font-size: 1rem;
+            z-index: 10;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #38BDF8;
+            /* text-sky-400 */
+        }
+
+        .highlight {
+            color: #38BDF8;
+            /* text-sky-400 */
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            text-align: left;
+            width: 100%;
+        }
+
+        .grid-item {
+            background-color: #1F2937;
+            /* bg-gray-800 */
+            padding: 2rem;
+            border-radius: 0.75rem;
+            /* rounded-xl */
+            border: 1px solid #374151;
+            /* border-gray-700 */
+        }
+
+        .grid-item h3 {
+            font-size: 1.5rem;
+            /* text-2xl */
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #F9FAFB;
+        }
+
+        .comment {
+            color: #6B7280;
+        }
+
+        .keyword {
+            color: #818CF8;
+        }
+
+        .type {
+            color: #60A5FA;
+        }
+
+        .method {
+            color: #A78BFA;
+        }
+
+        .string {
+            color: #FBBF24;
+        }
+
+        .number {
+            color: #fb7824;
+        }
+
+        .class-name {
+            color: #34D399;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 1rem;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #374151;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1f2937;
+        }
+
+        .step-item {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .step-item.active-step {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .journey-header {
+            position: absolute;
+            top: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: rgba(31, 41, 55, 0.7);
+            backdrop-filter: blur(5px);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid #374151;
+            z-index: 20;
+        }
+
+        .journey-step {
+            font-size: 0.9rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            transition: all 0.3s;
+        }
+
+        .journey-step.highlighted {
+            background-color: #0ea5e9;
+            /* bg-sky-500 */
+            color: white;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide-container">
+        <div class="slide active">
+            <div class="slide-content text-center">
+                <div class="text-2xl font-bold text-sky-400 mb-4">Lunch & Learn</div>
+                <h1 class="mb-4">QoreDB</h1>
+                <p class="text-2xl text-gray-300">A Look Inside an Educational SQL Database Engine</p>
+                <p class="mt-8 text-lg text-gray-400">Tom Meyers</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content text-left max-w-4xl">
+                <h2 class="text-center">Agenda</h2>
+                <ol class="list-decimal list-inside text-2xl space-y-4 text-gray-300">
+                    <li>Introduction & The "Why"</li>
+                    <li>Meet <span class="highlight">QoreDB</span>: An Educational Database</li>
+                    <li>How SQL Databases Work Internally</li>
+                    <li>Live Demo</li>
+                    <li>Future Work & What's Next</li>
+                    <li>Q&A</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Why Build a Database From Scratch?</h2>
+                <p class="max-w-4xl mx-auto">
+                    We use powerful databases like SQL Server, PostgreSQL, and MySQL every day. But what's really
+                    happening under the hood when you run <code
+                        class="bg-gray-800 p-1 rounded"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> Users;</code>?
+                </p>
+                <p class="max-w-4xl mx-auto mt-6">
+                    Building <span class="highlight">QoreDB</span> was a journey to demystify the magic. It's not about
+                    replacing production databases, but about creating a simplified, working model to understand the
+                    core principles of data storage, indexing, and query execution.
+                </p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h2>QoreDB High-Level Architecture</h2>
+                <p class="mb-4">Like most database systems, QoreDB separates its concerns into two main engines.</p>
+                <div class="flex items-center justify-center gap-4 text-center text-white text-lg mt-8">
+                    <div class="flex flex-col items-center">
+                        <p class="text-gray-400 mb-2">User</p>
+                        <div class="bg-gray-700 p-4 rounded-lg shadow-lg w-48">SQL Query</div>
+                    </div>
+
+                    <i class="fas fa-arrow-right text-3xl text-gray-500 mt-8"></i>
+
+                    <div class="border-2 border-dashed border-gray-600 rounded-lg p-4">
+                        <p class="text-gray-400 mb-2">QoreDB</p>
+                        <div class="flex items-center gap-2">
+                            <div class="bg-blue-600 p-4 rounded-lg shadow-lg w-48">Query<br />Engine</div>
+
+                            <i class="fas fa-exchange-alt text-2xl text-gray-400"></i>
+                            <div class="bg-green-600 p-4 rounded-lg shadow-lg w-48">Storage<br />Engine</div>
+
+                            <i class="fas fa-exchange-alt text-2xl text-gray-400"></i>
+                            <div class="bg-gray-700 p-4 rounded-lg shadow-lg w-48">Database<br />File</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h2>The Journey of a SQL Query: An Overview</h2>
+                <p class="text-gray-400 mb-8">A simple string of text goes through a multi-stage pipeline before it
+                    becomes results.</p>
+                <div class="text-lg flex flex-wrap justify-center items-center gap-4">
+                    <div class="bg-sky-500 text-white font-bold p-4 rounded-lg shadow-lg">SQL String</div>
+                    <i class="fas fa-arrow-right text-3xl text-gray-500"></i>
+                    <div class="bg-gray-800 p-4 rounded-lg">1. Parser & Lexer</div>
+                    <i class="fas fa-arrow-right text-3xl text-gray-500"></i>
+                    <div class="bg-gray-800 p-4 rounded-lg">2. AST</div>
+                    <i class="fas fa-arrow-right text-3xl text-gray-500"></i>
+                    <div class="bg-gray-800 p-4 rounded-lg">3. Execution Plan</div>
+                    <i class="fas fa-arrow-right text-3xl text-gray-500"></i>
+                    <div class="bg-gray-800 p-4 rounded-lg">4. Execution Engine</div>
+                    <i class="fas fa-arrow-right text-3xl text-gray-500"></i>
+                    <div class="bg-emerald-500 text-white font-bold p-4 rounded-lg shadow-lg">Results</div>
+                </div>
+                <p class="mt-8">Let's break down each step.</p>
+            </div>
+        </div>
+
+        <div class="slide" data-journey-step="1">
+            <div class="journey-header">
+                <div class="journey-step">SQL</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-1">Parser</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-2">AST</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-3">Plan</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-4">Execute</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step">Results</div>
+            </div>
+            <div class="slide-content">
+                <h2>Step 1: Parser & Lexer (The Grammar)</h2>
+                <p class="mb-4">First, we need to understand the query string. This is a job for a parser generator like
+                    <span class="highlight">ANTLR</span>.
+                </p>
+                <p class="mb-4">We define a grammar file (<code class="bg-gray-800 p-1 rounded">Sql.g4</code>) that
+                    describes the structure of our SQL dialect.</p>
+                <div class="grid-2">
+                    <div>
+                        <p class="mb-2 text-left">The <span class="font-bold">Lexer</span> breaks the input string into
+                            a stream of tokens.</p>
+                        <p class="font-mono text-lg bg-gray-700 p-4 rounded-lg text-left">
+                            "SELECT ID FROM Users" &rarr; <br>[SELECT, ID, FROM, Users]
+                        </p>
+                    </div>
+                    <div>
+                        <p class="mb-2 text-left">The <span class="font-bold">Parser</span> uses the tokens and grammar
+                            rules to check for correct syntax.</p>
+                        <p class="font-mono text-lg bg-gray-700 p-4 rounded-lg text-left">
+                            <span class="keyword">SELECT</span> Name <span class="keyword">FROM</span> Users;
+                            <span class="text-green-400">&check; Correct</span><br>
+                            <span class="keyword">FROM</span> Users <span class="keyword">SELECT</span> Name;
+                            <span class="text-red-400">&cross; Syntax Error</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="code-block">
+                    <pre><code><span class="comment">// From: QoreDB/QueryEngine/Parser/Sql.g4</span>
+<span class="keyword">grammar</span> Sql;
+
+<span class="method">select_statement</span>
+    : <span class="string">'SELECT'</span> result_column (',' result_column)*
+      <span class="string">'FROM'</span> table_name
+      (<span class="string">'WHERE'</span> expression)?
+      (<span class="string">'ORDER'</span> <span class="string">'BY'</span> ordering_term (',' ordering_term)*)?
+    ;
+
+<span class="method">result_column</span>
+    : <span class="string">'*'</span>
+    | column_name
+    ;
+</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-journey-step="2">
+            <div class="journey-header">
+                <div class="journey-step">SQL</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-1">Parser</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-2">AST</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-3">Plan</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-4">Execute</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step">Results</div>
+            </div>
+            <div class="slide-content">
+                <h2>Step 2: The Abstract Syntax Tree (AST)</h2>
+                <p>The parser generates an AST, a tree structure representing the query's logic. We use a Visitor to
+                    build our query objects from it.</p>
+                <div class="mt-4 font-mono text-center flex flex-col items-center">
+                    <div class="bg-blue-600 text-white p-3 rounded-lg border-2 border-blue-400">SELECT</div>
+                    <div class="w-px h-8 bg-gray-500"></div>
+                    <div class="w-3/4 h-px bg-gray-500"></div>
+                    <div class="w-full flex">
+                        <div class="w-1/3 flex flex-col items-center">
+                            <div class="w-px h-8 bg-gray-500"></div>
+                            <div class="bg-teal-600 text-white p-3 rounded-lg border-2 border-teal-400">Columns</div>
+                            <div class="w-px h-8 bg-gray-500"></div>
+                            <div class="bg-teal-600 text-white p-3 rounded-lg border-2 border-teal-400">Name</div>
+                        </div>
+                        <div class="w-1/3 flex flex-col items-center">
+                            <div class="w-px h-8 bg-gray-500"></div>
+                            <div class="bg-teal-600 text-white p-3 rounded-lg border-2 border-teal-400">FROM<br />Users
+                            </div>
+                        </div>
+                        <div class="w-1/3 flex flex-col items-center">
+                            <div class="w-px h-8 bg-gray-500"></div>
+                            <div class="bg-blue-600 text-white p-3 rounded-lg border-2 border-blue-400">WHERE</div>
+                            <div class="w-px h-8 bg-gray-500"></div>
+                            <div class="bg-blue-600 text-white p-3 rounded-lg border-2 border-blue-400">=</div>
+                            <div class="w-px h-8 bg-gray-500"></div>
+                            <div class="w-1/2 h-px bg-gray-500"></div>
+                            <div class="w-full flex">
+                                <div class="w-1/2 flex flex-col items-center">
+                                    <div class="w-px h-8 bg-gray-500"></div>
+                                    <div class="bg-teal-600 text-white p-3 rounded-lg border-2 border-teal-400">ID</div>
+                                </div>
+                                <div class="w-1/2 flex flex-col items-center">
+                                    <div class="w-px h-8 bg-gray-500"></div>
+                                    <div class="bg-sky-600 text-white p-3 rounded-lg border-2 border-sky-400">10</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-journey-step="3">
+            <div class="journey-header">
+                <div class="journey-step">SQL</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-1">Parser</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-2">AST</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-3">Plan</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-4">Execute</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step">Results</div>
+            </div>
+            <div class="slide-content">
+                <h2>Step 3/4: Execution Plan & The Volcano Model</h2>
+                <p>The AST is then transformed into a logical execution plan. QoreDB uses the <span
+                        class="highlight">Volcano</span> or <span class="highlight">Iterator</span> model.
+                </p>
+                <p class="text-gray-400 mb-6">Each operation becomes an "Operator". Each operator has a <code
+                        class="bg-gray-800 p-1 rounded"><span class="keyword">Source</span></code> property that pulls
+                    rows from the operator below
+                    it, processes it, and passes it up the tree.</p>
+                <p class="font-mono text-lg bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <span class="keyword">SELECT</span> Name <span class="keyword">FROM</span> Users <span
+                        class="keyword">WHERE</span> ID = <span class="number">10</span>;
+                </p>
+                <div class="flex justify-center items-center mt-6 space-x-4">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-600 text-white p-3 rounded-lg">Projection (Name)</div>
+                        <i class="fas fa-arrow-down text-3xl my-2"></i>
+                        <div class="bg-blue-600 text-white p-3 rounded-lg">Filter (ID = 10)</div>
+                        <i class="fas fa-arrow-down text-3xl my-2"></i>
+                        <div class="bg-green-600 text-white p-3 rounded-lg">Table Scan (Users)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-journey-step="3">
+            <div class="journey-header">
+                <div class="journey-step">SQL</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-1">Parser</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-2">AST</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-3">Plan</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-4">Execute</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step">Results</div>
+            </div>
+            <div class="slide-content">
+                <h2>Making the Plan Efficient: The Query Optimizer</h2>
+                <p>The initial execution plan is <span class="highlight">correct</span>, but not necessarily <span
+                        class="highlight">fast</span>. The optimizer's job is to rewrite it into a more efficient
+                    version.</p>
+                <p class="mt-4 text-gray-400">QoreDB uses a simple <strong class="text-white">Rule-Based
+                        Optimizer</strong>. It applies a series of transformation rules to the plan tree to reduce the
+                    amount of work the database has to do.</p>
+            </div>
+        </div>
+
+        <div class="slide" data-journey-step="3">
+            <div class="journey-header">
+                <div class="journey-step">SQL</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-1">Parser</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-2">AST</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-3">Plan</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-4">Execute</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step">Results</div>
+            </div>
+            <div class="slide-content">
+                <h2>Current Optimization Rules</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 text-left">
+                    <div class="grid-item">
+                        <h3><i class="fas fa-filter mr-2 text-sky-400"></i>Predicate Pushdown</h3>
+                        <p class="text-lg">Moves <code
+                                class="bg-gray-900 p-1 rounded"><span class="keyword">WHERE</span></code> clauses as
+                            close to the data source as possible. <br /><strong class="text-white">Why?</strong> Filter
+                            data early to avoid processing irrelevant rows.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3><i class="fas fa-eye mr-2 text-emerald-400"></i>Projection Pushdown</h3>
+                        <p class="text-lg">Moves column selections (e.g., <code
+                                class="bg-gray-900 p-1 rounded"><span class="keyword">WHERE</span> Name</code>) down to
+                            the storage layer. <br /><strong class="text-white">Why?</strong> Avoid reading unnecessary
+                            columns from the disk.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3><i class="fas fa-calculator mr-2 text-yellow-400"></i>Constant Folding</h3>
+                        <p class="text-lg">Evaluates expressions with constant values during planning, not execution
+                            (e.g., <code
+                                class="bg-gray-900 p-1 rounded"><span class="number">1</span> + <span class="number">1</span></code>
+                            becomes <code class="bg-gray-900 p-1 rounded"><span class="number">2</span></code>).
+                            <br /><strong class="text-white">Why?</strong> Avoids redundant calculations.</p>
+                    </div>
+                </div>
+                <br />
+                <h2>Other Optimization Rules</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 text-left">
+                    <div class="grid-item">
+                        <h3><i class="fas fa-book-open mr-2 text-indigo-400"></i>Index Selection</h3>
+                        <p class="text-lg">Uses an index to directly locate data, similar to using a book's index to
+                            find a page. <br /><strong class="text-white">Why?</strong> Avoids slow, full-table scans,
+                            making data retrieval much faster.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3><i class="fas fa-sitemap mr-2 text-rose-400"></i>Join Ordering</h3>
+                        <p class="text-lg">Determines the most efficient sequence to join multiple tables, starting with
+                            the join that produces the smallest result. <br /><strong class="text-white">Why?</strong>
+                            Prevents creating massive intermediate datasets that slow down the query.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3><i class="fas fa-magic mr-2 text-orange-400"></i>Query Rewriting</h3>
+                        <p class="text-lg">Transforms the original SQL into a logically equivalent but more efficient
+                            form, like converting a subquery into a <code class="bg-gray-900 p-1 rounded">JOIN</code>.
+                            <br /><strong class="text-white">Why?</strong> Executes a smarter, faster version of your
+                            query behind the scenes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-journey-step="3">
+            <div class="journey-header">
+                <div class="journey-step">SQL</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-1">Parser</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-2">AST</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-3">Plan</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step" id="j-step-4">Execute</div>
+                <i class="fas fa-arrow-right text-xs text-gray-500"></i>
+                <div class="journey-step">Results</div>
+            </div>
+            <div class="slide-content">
+                <h2>Optimization in Action</h2>
+                <p class="font-mono text-xl bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <span class="keyword">SELECT</span> Name, Age <span class="keyword">FROM</span> Users <span
+                        class="keyword">WHERE</span> Age > <span class="number">20</span> + <span
+                        class="number">4</span> <span class="keyword">ORDER BY</span> Age <span
+                        class="keyword">LIMIT</span> <span class="number">1</span>;
+                </p>
+                <div class="grid-2 mt-8">
+                    <div class="grid-item">
+                        <h3><i class="fas fa-thermometer-empty mr-2 text-red-400"></i>Before (Naive Plan)</h3>
+                        <div class="code-block text-base">
+                            <pre><code>[<span class="keyword">TableScan</span>] (* from Users)
+    └─ [<span class="keyword">Filter</span>] (Age > 20 + 4)
+        └─ [<span class="keyword">Sort</span>] (Age)
+            └─ [<span class="keyword">Take</span>] (1 OFFSET 0)
+                └─ [<span class="keyword">Project</span>] (Name, Age)</code></pre>
+                        </div>
+                        <p class="mt-2 text-gray-400">1. Reads <strong class="text-white">every column</strong> of
+                            <strong class="text-white">every row</strong> from disk.</p>
+                        <p class="text-gray-400">2. Filters out rows that don't match.</p>
+                        <p class="text-gray-400">3. Throws away the unneeded columns.</p>
+                        <p class="text-gray-400">4. Evaluates expression per row.</p>
+                    </div>
+                    <div class="grid-item border-green-500">
+                        <h3><i class="fas fa-thermometer-full mr-2 text-green-400"></i>After (Optimized Plan)</h3>
+                        <div class="code-block text-base">
+                            <pre><code>[<span class="keyword">TableScan</span>] (* from Users)
+    └─ [<span class="keyword">Project</span>] (Name, Age)
+        └─ [<span class="keyword">Filter</span>] (Age > 25)
+            └─ [<span class="keyword">Sort</span>] (Age)
+                └─ [<span class="keyword">Take</span>] (1 OFFSET 0)
+                    └─ [<span class="keyword">Project</span>] (Name, Age)</code></pre>
+                        </div>
+                        <p class="mt-2 text-gray-400">1. Reads <strong class="text-white">only the 'Name' and 'Age'
+                                columns</strong>.</p>
+                        <p class="text-gray-400">2. Evaluates simplified expression.</p>
+                        <p class="text-green-400 font-bold mt-4">Massively reduced I/O and CPU usage!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h2>The Foundation: Storage Engine</h2>
+                <p>How is data actually stored on disk? It's not just a simple text file.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 items-center">
+                    <div class="space-y-6 text-left">
+                        <div class="grid-item !p-6">
+                            <h3><i class="fas fa-file-alt mr-2 text-sky-400"></i>Page-Based Storage</h3>
+                            <p class="text-lg">The database file is divided into fixed-size blocks called <span
+                                    class="highlight">Pages</span> (e.g., 4KB). All reads and writes happen a page at a
+                                time.</p>
+                        </div>
+                        <div class="grid-item !p-6">
+                            <h3><i class="fas fa-sitemap mr-2 text-emerald-400"></i>B+ Tree Index</h3>
+                            <p class="text-lg">To find data quickly without scanning the whole file, we use a <span
+                                    class="highlight">B+ Tree</span>. It's a self-balancing tree optimized for
+                                disk-based storage.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-2">Finding 1 row in 1,000,000</h3>
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h2>The Pager: Managing Memory</h2>
+                <p>The Pager abstracts file I/O, reading pages from disk into a cache and writing them back when they're
+                    modified.</p>
+                <div class="code-block">
+                    <pre><code><span class="comment">// From: QoreDB/StorageEngine/Pager/Interfaces/IPager.cs</span>
+<span class="keyword">public interface</span> <span class="type">IPager</span> : <span class="type">IDisposable</span>
+{
+    <span class="type">QorePage</span> <span class="method">GetPage</span>(<span class="type">int</span> pageId);
+    <span class="type">int</span> <span class="method">AllocatePage</span>();
+    <span class="type">void</span> <span class="method">WritePage</span>(<span class="type">int</span> pageId, <span class="type">byte[]</span> data);
+    <span class="type">void</span> <span class="method">FlushPage</span>();
+    <span class="type">bool</span> <span class="method">PageExists</span>();
+}
+</code></pre>
+                </div>
+                <p class="mt-4 text-gray-400">QoreDB has both a file-based pager (<code
+                        class="bg-gray-800 p-1 rounded">QorePager.cs</code>) and an <code
+                        class="bg-gray-800 p-1 rounded">InMemoryQorePager.cs</code> for testing.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Anatomy of a Page: The Node Header</h2>
+                <p>Each page used by the B+ Tree begins with a strict binary header.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 items-center">
+                    <div class="text-left">
+                        <h3 class="text-xl font-semibold mb-2">Leaf Node Header Layout</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Offset</th>
+                                    <th>Size</th>
+                                    <th>Field</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0</td>
+                                    <td>1 byte</td>
+                                    <td>IsLeaf</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>4 bytes</td>
+                                    <td>KeyCount</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>4 bytes</td>
+                                    <td>NextLeafPageId</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="code-block mt-4 font-mono text-sm">
+                            <pre><code><span style="color:#9CA3AF">Offset | 00 01 02 03 04 05 06 07 | 08 09 0A 0B 0C 0D 0E 0F</span>
+-------+-------------------------+------------------------
+<span style="color:#818CF8">0000</span>   | <span style="color:#FBBF24">01</span> <span style="color:#34D399">02 00 00 00</span> <span style="color:#60A5FA">05 00 00 00</span> | XX XX XX XX XX XX XX XX
+        | &circ;  ^---------- &circ;---------- | &circ;--------------------
+        | |      |            |         |
+        | IsLeaf KeyCount=2   NextPage=5  Key/Value Data Starts...
+        | (true) (little-endian)         (little-endian)</code></pre>
+                        </div>
+                    </div>
+                    <div class="text-left bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-4">4KB Page Structure</h3>
+                        <div class="w-full bg-gray-900 rounded-lg flex font-mono text-sm border border-gray-600">
+                            <div class="bg-pink-600 p-4 rounded-l-lg text-center flex flex-col justify-center"
+                                style="flex-basis: 5%;">
+                                <span class="font-bold">Header</span>
+                                <span>9 B</span>
+                            </div>
+                            <div class="bg-gray-700 p-4 text-center flex-1 flex flex-col justify-center">
+                                <span class="font-bold">Cell Pointers & Data Area</span>
+                                <span>4087 Bytes</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mt-4 text-base">The fixed-size header contains metadata, while the rest
+                            of the page stores pointers to row data (cells) and the cell data itself. Note: This is not
+                            to scale</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h2>The B+ Tree: Our Indexing Powerhouse</h2>
+                <p>The B+ Tree keeps data sorted and allows for fast lookups, insertions, and deletions.</p>
+                <p>The B+ Tree stores page indexes and the pager has constant time lookup of pages by id.</p>
+
+                <div class="mt-6 flex flex-col items-center font-sans text-sm text-white">
+                    <div class="bg-pink-700 border-2 border-pink-400 rounded-lg px-6 py-3">Root<br />20</div>
+                    <br />
+                    <div class="w-full">
+                        <p class="text-center text-gray-400 mb-2 text-base">Internal Nodes</p>
+                        <div class="flex justify-center gap-16">
+                            <div class="flex flex-col items-center">
+                                <div class="bg-indigo-700 border-2 border-indigo-400 rounded-lg px-6 py-3">5, 10</div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="bg-indigo-700 border-2 border-indigo-400 rounded-lg px-6 py-3">25, 35</div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="w-full mt-2">
+                        <p class="text-center text-gray-400 mb-2 text-base">Leaf Nodes</p>
+                        <div class="flex flex-wrap justify-center items-center gap-2">
+                            <div class="bg-green-700 border-2 border-green-500 rounded-lg px-3 py-2">1, 2, 4</div>
+                            <span class="text-gray-500">&lrarr;</span>
+                            <div class="bg-green-700 border-2 border-green-500 rounded-lg px-3 py-2">5, 8</div>
+                            <span class="text-gray-500">&lrarr;</span>
+                            <div class="bg-green-700 border-2 border-green-500 rounded-lg px-3 py-2">10, 12, 18</div>
+                            <span class="text-gray-500">&lrarr;</span>
+                            <div class="bg-green-700 border-2 border-green-500 rounded-lg px-3 py-2">20, 22</div>
+                            <span class="text-gray-500">&lrarr;</span>
+                            <div class="bg-green-700 border-2 border-green-500 rounded-lg px-3 py-2">25, 30</div>
+                            <span class="text-gray-500">&lrarr;</span>
+                            <div class="bg-green-700 border-2 border-green-500 rounded-lg px-3 py-2">35, 40, 50</div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4">Connections from internal nodes to leaf nodes are omitted
+                        because of CSS...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Serialization: From Objects to Bytes</h2>
+                <p>We need a way to convert our C# objects (like a B+ Tree node or a table row) into bytes to be stored
+                    on a page, and back again.</p>
+                <div class="code-block">
+                    <pre><code><span class="comment">// From: QoreDB/StorageEngine/Index/Interfaces/ISerializer.cs</span>
+<span class="keyword">public interface</span> <span class="type">ISerializer</span>&lt;T>
+{
+    <span class="type">byte</span>[] <span class="method">Serialize</span>(<span class="type">T</span> obj);
+    <span class="type">T</span> <span class="method">Deserialize</span>(<span class="type">byte</span>[] data);
+}
+
+<span class="comment">// From: QoreDB/StorageEngine/Index/Serializer/Implementations/RowSerializer.cs - Simplified</span>
+<span class="keyword">public class</span> <span class="class-name">RowSerializer</span> : <span class="type">ISerializer</span>&lt;<span class="type">Row</span>>
+{
+    <span class="comment">// ... constructor ...</span>
+    <span class="keyword">public</span> <span class="type">byte</span>[] <span class="method">Serialize</span>(<span class="type">Row</span> row) { ... }
+    <span class="keyword">public</span> <span class="type">Row</span> <span class="method">Deserialize</span>(<span class="type">byte</span>[] data) { ... }
+}
+</code></pre>
+                </div>
+                <p class="mt-4">This layer is critical for abstracting the physical storage from the logical data
+                    structures.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h2>The Brain of the Database: System Catalog</h2>
+                <p>How does the DB know what tables exist, what columns they have, or their data types? <span
+                        class="highlight">It asks itself!</span></p>
+                <p class="mt-4">The System Catalog is a set of internal tables that store this metadata. In QoreDB, the
+                    <code class="bg-gray-800 p-1 rounded">CatalogManager</code> uses a dedicated B+ Tree to store <code
+                        class="bg-gray-800 p-1 rounded">TableInfo</code> and <code
+                        class="bg-gray-800 p-1 rounded">ColumnInfo</code> objects.
+                </p>
+                <div class="code-block">
+                    <pre><code><span class="comment">// From: QoreDB/Catalog/Interfaces/ICatalogManager.cs</span>
+<span class="keyword">public interface</span> <span class="type">ICatalogManager</span>
+{
+    <span class="type">void</span> <span class="method">CreateTable</span>(<span class="type">string</span> tableName, <span class="type">IEnumerable&lt;<span class="type">ColumnInfo</span>&gt;</span> columns);
+    <span class="type">TableInfo</span> <span class="method">GetTable</span>(<span class="type">string</span> tableName);
+    <span class="type">void</span> <span class="method">DropTable</span>(<span class="type">string</span> tableName, <span class="type">bool</span> ifExists);
+    <span class="type">void</span> <span class="method">Insert&lt;<span class=type>TKey</span>&gt;</span>(<span class="type">string</span> tableName, <span class="type">IDictionary&lt;<span class="type">string, object</span>&gt;</span> rows);
+}
+
+<span class="comment">// From: QoreDB/Catalog/Models/TableInfo.cs - Simplified</span>
+<span class="keyword">public class</span> <span class="class-name">TableInfo</span>
+{
+    <span class="keyword">public string</span> TableName { <span class="keyword">get</span>; }
+    <span class="keyword">public int</span> RootPageId { <span class="keyword">get</span>; } <span class="comment">// The start of the table's data B+Tree</span>
+    <span class="keyword">public IReadOnlyList</span>&lt;<span class="type">ColumnInfo</span>> Columns { <span class="keyword">get</span>; }
+}
+
+<span class="comment">// From: QoreDB/Catalog/Models/ColumnInfo.cs - Simplified</span>
+<span class="keyword">public class</span> <span class="class-name">ColumnInfo</span>
+{
+    <span class="keyword">public string</span> ColumnName { <span class="keyword">get</span>; }
+    <span class="keyword">public Type</span> DataType { <span class="keyword">get</span>; } <span class="comment">// The C# type representing the data type of the column</span>
+}
+</code></pre>
+                </div>
+                <p class="mt-4 text-gray-400">This is a powerful concept: the database uses its own storage engine to
+                    manage its own structure.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Putting It All Together</h2>
+                <p class="text-xl max-w-5xl mx-auto">
+                    <code
+                        class="bg-gray-800 p-1 rounded"><span class="keyword">SELECT</span> Name <span class="keyword">FROM</span> Users <span class="keyword">WHERE</span> ID = <span class="number">10</span>;</code>
+                </p>
+                <ol class="list-decimal list-inside text-left max-w-4xl mx-auto mt-8 space-y-3 text-lg text-gray-300">
+                    <li class="step-item"><span class="highlight">Query Engine</span> parses the SQL string into an AST.
+                    </li>
+                    <li class="step-item">The engine asks the <span class="highlight">Catalog Manager</span> for info
+                        about the `Users` table (e.g. column types, root page ID).</li>
+                    <li class="step-item">The AST is converted into an execution plan: <code
+                            class="bg-gray-800 p-1 rounded">Projection(Filter(TableScan))</code>.</li>
+                    <li class="step-item">The <code class="bg-gray-800 p-1 rounded">TableScanOperator</code> is given
+                        the table's root page ID from the catalog.</li>
+                    <li class="step-item">Execution begins, operators call <code
+                            class="bg-gray-800 p-1 rounded">Execute()</code> on the operators below them in the tree.
+                    </li>
+                    <li class="step-item">The <span class="highlight">TableScan</span> talks to the `Users` B+ Tree,
+                        requesting pages from the <span class="highlight">Pager</span> to find data.</li>
+                    <li class="step-item">A row is returned up the operator tree. The filter keeps only rows where `ID =
+                        10`. The projection keeps only the `Name` column.</li>
+                    <li class="step-item">The final result is passed back to the client.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <i class="fas fa-desktop text-6xl mb-6 text-sky-400"></i>
+                <h2>Documentation</h2>
+                <p class="mb-8">Lets look at <span class="highlight">QoreDB</span> documentation!</p>
+                <div>
+                    <iframe id="inlineFrameExample" title="Inline Frame Example" width="1200" height="900"
+                        src="http://localhost:8080/README.html">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <i class="fas fa-desktop text-6xl mb-6 text-sky-400"></i>
+                <h2>Live Demo</h2>
+                <p class="mb-8">Let's see <span class="highlight">QoreDB</span> in action!</p>
+                <div
+                    class="text-left max-w-2xl mx-auto font-mono text-lg bg-gray-800 p-6 rounded-lg border border-gray-700">
+                    <p class="text-gray-400"># We will run the TUI project:</p>
+                    <p>&gt; dotnet run --project QoreDB.Tui/QoreDB.Tui.csproj</p>
+                    <br>
+                    <p class="text-gray-400"># 1. Create a table</p>
+                    <p><span class="keyword">CREATE TABLE</span> Users (ID <span class="keyword">INT</span>, Name <span
+                            class="keyword">TEXT</span>);</p>
+                    <br>
+                    <p class="text-gray-400"># 2. Insert some data</p>
+                    <p><span class="keyword">INSERT INTO</span> Users <span class="keyword">VALUES</span> (<span
+                            class="number">1</span>, '<span class="string">Alice</span>');</p>
+                    <p><span class="keyword">INSERT INTO</span> Users <span class="keyword">VALUES</span> (<span
+                            class="number">2</span>, '<span class="string">Bob</span>');</p>
+                    <br>
+                    <p class="text-gray-400"># 3. Query the data</p>
+                    <p><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> Users;</p>
+                    <p><span class="keyword">SELECT</span> Name <span class="keyword">FROM</span> Users <span
+                            class="keyword">WHERE</span> ID = <span class="number">2</span>;</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Future Work & What's Next?</h2>
+                <p>This is just the beginning. Here are some of the features that would take QoreDB to the next level.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 text-left">
+                    <div class="grid-item">
+                        <h3><i class="fas fa-lock mr-2 text-yellow-400"></i>Transactions (ACID)</h3>
+                        <p class="text-lg">Implement a write-ahead log to guarantee data integrity.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3><i class="fas fa-calculator mr-2 text-cyan-400"></i>Aggregate Functions</h3>
+                        <p class="text-lg">Implement functions like <span class=method>COUNT()</span>, <span
+                                class=method>SUM()</span>, and <span class=method>AVG()</span>.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3><i class="fas fa-project-diagram mr-2 text-fuchsia-400"></i>Join Algorithms</h3>
+                        <p class="text-lg">Implement <span class=method>INNER</span> and <span class=method>LEFT
+                                JOIN</span> using efficient algorithms.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3><i class="fas fa-cogs mr-2 text-gray-400"></i>Concurrency</h3>
+                        <p class="text-lg">Introduce multi-threading to handle simultaneous queries safely.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3><i class="fas fa-server mr-2 text-lime-400"></i>Network Stack</h3>
+                        <p class="text-lg">Evolve from an embedded library to a standalone server process.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3><i class="fas fa-calendar-alt mr-2 text-rose-400"></i>More Data Types</h3>
+                        <p class="text-lg">Add support for <span class=method>VARCHAR</span>, <span
+                                class=method>DATETIME</span>, and <span class=method>DECIMAL</span>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Questions?</h1>
+                <p class="mt-8 text-2xl text-gray-400">Thank you!</p>
+            </div>
+        </div>
+    </div>
+
+    <button id="prev-btn" class="nav-button"><i class="fas fa-arrow-left"></i></button>
+    <button id="next-btn" class="nav-button"><i class="fas fa-arrow-right"></i></button>
+    <div id="slide-counter" class="slide-counter"></div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const slideCounter = document.getElementById('slide-counter');
+        let currentSlide = 0;
+        let charts = {}; // To hold our chart instances
+
+        function showSlide(n) {
+            // Animate steps on slide 15
+            if (slides[currentSlide] && slides[currentSlide].querySelectorAll('.step-item').length > 0) {
+                slides[currentSlide].querySelectorAll('.step-item').forEach(item => {
+                    item.classList.remove('active-step');
+                });
+            }
+            // Reset journey header highlights
+            document.querySelectorAll('.journey-step.highlighted').forEach(el => el.classList.remove('highlighted'));
+
+            slides.forEach((slide, index) => {
+                if (index === n) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            currentSlide = n;
+            updateNav();
+
+            // The "Putting it all together" slide has animated steps
+            const puttingItAllTogetherSlideIndex = Array.from(slides).findIndex(s => s.querySelector('h2')?.textContent.includes('Putting It All Together'));
+            if (n === puttingItAllTogetherSlideIndex) {
+                const steps = slides[n].querySelectorAll('.step-item');
+                steps.forEach((step, index) => {
+                    setTimeout(() => {
+                        step.classList.add('active-step');
+                    }, (index + 1) * 400);
+                });
+            }
+
+            // Highlight journey step
+            const currentSlideEl = slides[n];
+            if (currentSlideEl.dataset.journeyStep) {
+                const stepsToHighlight = currentSlideEl.dataset.journeyStep.split(',');
+                stepsToHighlight.forEach(stepNum => {
+                    const stepEl = currentSlideEl.querySelector(`#j-step-${stepNum}`);
+                    if (stepEl) stepEl.classList.add('highlighted');
+                });
+            }
+
+            // Render chart
+            const chartSlideIndex = Array.from(slides).findIndex(s => s.querySelector('#performanceChart'));
+            if (n === chartSlideIndex) renderPerformanceChart();
+        }
+
+        function updateNav() {
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+            prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+            nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+            slideCounter.textContent = `${currentSlide + 1} / ${slides.length}`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                showSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        function renderPerformanceChart() {
+            const ctx = document.getElementById('performanceChart');
+            if (!ctx || charts['performance']) return;
+            charts['performance'] = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Table Scan (No Index)', 'B+ Tree Seek (Indexed)'],
+                    datasets: [{
+                        label: 'Time in Milliseconds (log scale)',
+                        data: [500, 0.05],
+                        backgroundColor: ['rgba(251, 113, 133, 0.5)', 'rgba(52, 211, 153, 0.5)'],
+                        borderColor: ['rgb(251, 113, 133)', 'rgb(52, 211, 153)'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            type: 'logarithmic', min: 0.01,
+                            ticks: { color: '#d1d5db', callback: (value) => `${value} ms` },
+                            grid: { color: '#374151' }
+                        },
+                        y: { ticks: { color: '#d1d5db' }, grid: { display: false } }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        showSlide(0);
+    </script>
+</body>
+
+</html>

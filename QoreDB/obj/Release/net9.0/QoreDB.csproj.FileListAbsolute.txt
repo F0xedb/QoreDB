@@ -1,0 +1,12 @@
+C:\Repos\QoreDB\QoreDB\bin\Release\net9.0\QoreDB.deps.json
+C:\Repos\QoreDB\QoreDB\bin\Release\net9.0\QoreDB.dll
+C:\Repos\QoreDB\QoreDB\bin\Release\net9.0\QoreDB.pdb
+C:\Repos\QoreDB\QoreDB\obj\Release\net9.0\QoreDB.csproj.AssemblyReference.cache
+C:\Repos\QoreDB\QoreDB\obj\Release\net9.0\QoreDB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\QoreDB\QoreDB\obj\Release\net9.0\QoreDB.AssemblyInfoInputs.cache
+C:\Repos\QoreDB\QoreDB\obj\Release\net9.0\QoreDB.AssemblyInfo.cs
+C:\Repos\QoreDB\QoreDB\obj\Release\net9.0\QoreDB.csproj.CoreCompileInputs.cache
+C:\Repos\QoreDB\QoreDB\obj\Release\net9.0\QoreDB.dll
+C:\Repos\QoreDB\QoreDB\obj\Release\net9.0\refint\QoreDB.dll
+C:\Repos\QoreDB\QoreDB\obj\Release\net9.0\QoreDB.pdb
+C:\Repos\QoreDB\QoreDB\obj\Release\net9.0\ref\QoreDB.dll
