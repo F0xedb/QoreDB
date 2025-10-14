@@ -29,6 +29,8 @@ jobs:
   build-and-deploy-docs:
     needs: build-and-test
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - uses: actions/checkout@v2
