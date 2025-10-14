@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>&#128640; QoreDB: An Educational SQL Database Engine | QoreDB Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="&#128640; QoreDB: An Educational SQL Database Engine | QoreDB Documentation ">
+      
+      
+      <link rel="icon" href="images/logo.svg">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/F0xedb/QoreDB/blob/main/README.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="landing" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="-qoredb-an-educational-sql-database-engine">🚀 QoreDB: An Educational SQL Database Engine</h1>
+
+<p><img src="https://img.shields.io/badge/build-passing-brightgreen" alt="Build Status">
+<img src="https://img.shields.io/badge/license-MIT-blue" alt="License">
+<img src="https://img.shields.io/badge/language-C%23-purple" alt="Language">
+<img src="https://img.shields.io/badge/.NET-9.0-blueviolet" alt=".NET Version"></p>
+<p>A lightweight, educational SQL database engine built from scratch in C#. This project is a deep dive into the core components of a relational database, including a query parser, an execution engine, and a B+ Tree-based storage layer.</p>
+<hr>
+<h2 id="-documentation">📚 Documentation</h2>
+<p><strong>For a complete guide to the architecture, API, and usage, please visit the <a href="https://f0xedb.github.io/QoreDB">official documentation</a>.</strong></p>
+<p>The documentation is generated using <strong>DocFX</strong> and provides a detailed look into the internals of QoreDB.</p>
+<hr>
+<h2 id="-features">✨ Features</h2>
+<ul>
+<li><strong>Interactive TUI Shell</strong>: A user-friendly terminal interface powered by <strong>Spectre.Console</strong>, featuring command history, readline support, and formatted query results.</li>
+<li><strong>Custom SQL Parser</strong>: A robust, case-insensitive SQL parser built with <strong>ANTLR</strong> that transforms raw SQL into an Abstract Syntax Tree (AST).</li>
+<li><strong>Extensible Query Engine</strong>: An extensible query execution engine built on the <strong>Iterator (Volcano) model</strong>, making it easy to add new SQL features and operators.</li>
+<li><strong>B+ Tree Storage Engine</strong>: A persistent, page-based storage engine featuring a B+ Tree implementation for efficient indexing and data retrieval.</li>
+<li><strong>System Catalog</strong>: Manages all schema information (tables and columns) within the database.</li>
+<li><strong>Meta-Commands</strong>: The TUI supports special commands for database management, such as <code>\dt</code> to list tables and <code>\d &lt;table&gt;</code> to describe a table's schema.</li>
+<li><strong>Supported SQL Operations</strong>:
+<ul>
+<li><code>CREATE TABLE</code></li>
+<li><code>DROP TABLE</code></li>
+<li><code>INSERT INTO</code></li>
+<li><code>SELECT</code> (with <code>*</code>, <code>WHERE</code>, and <code>ORDER BY</code> clauses)</li>
+</ul>
+</li>
+</ul>
+<h2 id="-technology-stack">🛠️ Technology Stack</h2>
+<ul>
+<li><strong>Language</strong>: C# 12</li>
+<li><strong>Framework</strong>: .NET 9</li>
+<li><strong>Parser Generator</strong>: ANTLR4</li>
+<li><strong>TUI Framework</strong>: Spectre.Console</li>
+<li><strong>Testing</strong>: NUnit, Moq, FluentAssertions</li>
+</ul>
+<h2 id="-architecture-overview">🏛️ Architecture Overview</h2>
+<p>QoreDB is designed with a clean separation of concerns, broken down into four distinct layers.</p>
+<pre><code class="lang-mermaid">graph TD
+    A[TUI Shell] --&gt; B(Query Engine);
+    B -- Executes Plan --&gt; C(Catalog Manager);
+    C -- Manages Metadata &amp; Data --&gt; D(Storage Engine);
+
+    subgraph User Interface
+        A
+    end
+
+    subgraph Query Processing
+        B
+    end
+
+    subgraph Schema &amp; Data Management
+        C
+    end
+
+    subgraph Physical Storage
+        D(B+ Tree &amp; Pager)
+    end
+</code></pre>
+<ol>
+<li><strong>TUI (Terminal User Interface)</strong>: The entry point for users. It provides an interactive shell for writing SQL and viewing results.</li>
+<li><strong>Query Engine</strong>: The brain of the database. It uses ANTLR to parse SQL into an operator tree (AST) and then executes that plan.</li>
+<li><strong>Catalog Manager</strong>: Manages all database metadata. It knows where tables are, what columns they have, and what their data types are.</li>
+<li><strong>Storage Engine</strong>: The lowest level, responsible for reading and writing data to and from the disk (or memory). It uses a pager to manage memory and a B+ Tree for indexing.</li>
+</ol>
+<h2 id="-getting-started">🏁 Getting Started</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>.NET 9 SDK</li>
+<li>Java Runtime Environment (for ANTLR code generation)</li>
+</ul>
+<h3 id="installation--running">Installation &amp; Running</h3>
+<ol>
+<li><p><strong>Clone the repository:</strong></p>
+<pre><code class="lang-bash">git clone https://github.com/F0xedb/QoreDB.git
+cd QoreDB
+</code></pre>
+</li>
+<li><p><strong>Build the solution:</strong>
+<em>This will also trigger the ANTLR code generation.</em></p>
+<pre><code class="lang-bash">dotnet build
+</code></pre>
+</li>
+<li><p><strong>Run the TUI:</strong></p>
+<pre><code class="lang-bash">dotnet run --project QoreDB.Tui/QoreDB.Tui.csproj
+</code></pre>
+</li>
+</ol>
+<h2 id="-usage">💻 Usage</h2>
+<p>Once the TUI is running, you can interact with the database using SQL commands and special meta-commands.</p>
+<h3 id="sql-commands">SQL Commands</h3>
+<pre><code class="lang-sql">-- Create a new table
+CREATE TABLE Employees (Id INT, Name STRING, City STRING);
+
+-- Insert some data
+INSERT INTO Employees (Id, Name, City) VALUES (1, 'Alice', 'Seattle');
+INSERT INTO Employees (Id, Name, City) VALUES (2, 'Bob', 'New York');
+
+-- Query the data
+SELECT Name FROM Employees WHERE City = 'Seattle' ORDER BY Name;
+</code></pre>
+<h3 id="meta-commands">Meta-Commands</h3>
+<ul>
+<li><code>\help</code> or <code>\?</code>: Displays the help message.</li>
+<li><code>\dt</code>: Lists all tables in the database.</li>
+<li><code>\d &lt;table&gt;</code>: Describes the columns of a specific table.</li>
+<li><code>\import &lt;file&gt;</code>: Executes SQL statements from a file.</li>
+<li><code>\q</code> or <code>\exit</code>: Exits the shell.</li>
+</ul>
+<h2 id="-contributing">🤝 Contributing</h2>
+<p>This is an educational project, and contributions are welcome! Whether it's fixing a bug, adding a new SQL feature, or improving the documentation, feel free to open an issue or submit a pull request.</p>
+<ol>
+<li>Fork the repository.</li>
+<li>Create a new branch (<code>git checkout -b feature/AmazingFeature</code>).</li>
+<li>Commit your changes (<code>git commit -m 'Add some AmazingFeature'</code>).</li>
+<li>Push to the branch (<code>git push origin feature/AmazingFeature</code>).</li>
+<li>Open a Pull Request.</li>
+</ol>
+<h2 id="-license">📜 License</h2>
+<p>This project is licensed under the MIT License.</p>
+<p>Copyright (c) 2025 Tom Meyers</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/F0xedb/QoreDB/blob/main/README.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

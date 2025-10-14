@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Getting Started with QoreDB | QoreDB Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Getting Started with QoreDB | QoreDB Documentation ">
+      
+      
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/F0xedb/QoreDB/blob/main/docs/getting-started.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="getting-started-with-qoredb">Getting Started with QoreDB</h1>
+
+<p>This guide will walk you through the process of setting up and running QoreDB on your local machine.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you begin, ensure you have the following software installed:</p>
+<ul>
+<li><strong>.NET 9 SDK</strong>: QoreDB is built using C# and the .NET 9 framework.</li>
+<li><strong>Java Runtime Environment (JRE)</strong>: ANTLR, the parser generator used in this project, requires a JRE for code generation.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<ol>
+<li><p><strong>Clone the Repository</strong></p>
+<p>First, clone the QoreDB repository to your local machine using Git.</p>
+<pre><code class="lang-bash">git clone &lt;your-repo-url&gt;
+cd QoreDB
+</code></pre>
+</li>
+<li><p><strong>Build the Project</strong></p>
+<p>Next, build the solution using the <code>dotnet build</code> command. This will also trigger the ANTLR code generation process, which creates the SQL parser from the grammar file.</p>
+<pre><code class="lang-bash">dotnet build
+</code></pre>
+</li>
+</ol>
+<h2 id="running-the-tui-shell">Running the TUI Shell</h2>
+<p>Once the project is built, you can run the interactive Terminal User Interface (TUI) to start interacting with the database.</p>
+<pre><code class="lang-bash">dotnet run --project QoreDB.Tui/QoreDB.Tui.csproj
+</code></pre>
+<p>This will launch the QoreDB shell, where you can execute SQL commands and meta-commands.</p>
+<h2 id="your-first-interaction">Your First Interaction</h2>
+<p>Here's a quick example of how to create a table, insert data, and query it using the TUI shell:</p>
+<ol>
+<li><p><strong>Create a Table</strong></p>
+<pre><code class="lang-sql">CREATE TABLE Employees (Id INT, Name STRING, City STRING);
+</code></pre>
+</li>
+<li><p><strong>Insert Data</strong></p>
+<pre><code class="lang-sql">INSERT INTO Employees (Id, Name, City) VALUES (1, 'Alice', 'Seattle');
+INSERT INTO Employees (Id, Name, City) VALUES (2, 'Bob', 'New York');
+</code></pre>
+</li>
+<li><p><strong>Query Data</strong></p>
+<pre><code class="lang-sql">SELECT Name FROM Employees WHERE City = 'Seattle';
+</code></pre>
+</li>
+</ol>
+<p>You should see the following output:</p>
+<pre><code>┌───────┐
+│ Name  │
+├───────┤
+│ Alice │
+└───────┘
+</code></pre>
+<p>Congratulations, you have successfully set up and used QoreDB.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/F0xedb/QoreDB/blob/main/docs/getting-started.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

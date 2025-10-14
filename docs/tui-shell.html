@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>The TUI Shell | QoreDB Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="The TUI Shell | QoreDB Documentation ">
+      
+      
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/F0xedb/QoreDB/blob/main/docs/tui-shell.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="the-tui-shell">The TUI Shell</h1>
+
+<p>The QoreDB Terminal User Interface (TUI) provides a simple yet powerful interactive shell for working with your database.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Interactive SQL Execution</strong>: Write and execute SQL queries in real-time.</li>
+<li><strong>Meta-Commands</strong>: Use special commands for database management tasks.</li>
+<li><strong>Command History</strong>: Navigate through your previous commands using the arrow keys.</li>
+<li><strong>Auto-Completion</strong>: Basic auto-completion for SQL keywords and table names.</li>
+<li><strong>Formatted Output</strong>: Query results are displayed in a clean, readable table format, thanks to Spectre.Console.</li>
+</ul>
+<h2 id="meta-commands">Meta-Commands</h2>
+<p>Meta-commands are special commands that are not part of the SQL language but are recognized by the TUI shell. They all start with a backslash (<code>\</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\help</code> or <code>\?</code></td>
+<td>Displays a help message with all available commands.</td>
+</tr>
+<tr>
+<td><code>\dt</code></td>
+<td>Lists all the tables in the current database.</td>
+</tr>
+<tr>
+<td><code>\d &lt;table&gt;</code></td>
+<td>Describes the columns of a specific table, showing their names and data types.</td>
+</tr>
+<tr>
+<td><code>\import &lt;file&gt;</code></td>
+<td>Executes a series of SQL statements from a file.</td>
+</tr>
+<tr>
+<td><code>\q</code> or <code>\exit</code></td>
+<td>Exits the TUI shell.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-usage">Example Usage</h3>
+<ul>
+<li><p><strong>Listing Tables:</strong></p>
+<pre><code>\dt
+</code></pre>
+</li>
+<li><p><strong>Describing a Table:</strong></p>
+<pre><code>\d Employees
+</code></pre>
+</li>
+<li><p><strong>Importing a SQL Script:</strong></p>
+<pre><code>\import /path/to/your/script.sql
+</code></pre>
+</li>
+</ul>
+<h2 id="customizing-the-shell">Customizing the Shell</h2>
+<p>The TUI shell is built to be extensible. You can add new meta-commands by implementing the <code>ICommand</code> interface and registering them in the <code>CommandProcessor</code>. This allows for the addition of custom functionality tailored to your specific needs.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/F0xedb/QoreDB/blob/main/docs/tui-shell.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

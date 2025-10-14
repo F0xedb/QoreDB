@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Query Optimizer | QoreDB Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Query Optimizer | QoreDB Documentation ">
+      
+      
+      <link rel="icon" href="../../images/logo.svg">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/F0xedb/QoreDB/blob/main/docs/query-engine/optimizer.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="query-optimizer">Query Optimizer</h1>
+
+<p>Once a SQL query has been parsed into an Abstract Syntax Tree (AST), the next step is to optimize it. The goal of the query optimizer is to find the most efficient way to execute the query. A single SQL query can often be executed in many different ways, and the optimizer's job is to choose the best execution plan.</p>
+<h2 id="rule-based-optimization">Rule-Based Optimization</h2>
+<p>QoreDB uses a simple rule-based optimizer. It applies a series of predefined rules to the AST to transform it into a more efficient, but semantically equivalent, plan.</p>
+<h3 id="key-optimization-rules">Key Optimization Rules</h3>
+<ul>
+<li><p><strong>Predicate Pushdown</strong>: This is one of the most important optimization techniques. It involves moving filtering conditions (<code>WHERE</code> clauses) as far down the execution tree as possible. By filtering data early, we can significantly reduce the amount of data that needs to be processed by subsequent operators.</p>
+<p>For example, in a query with a <code>JOIN</code> and a <code>WHERE</code> clause, pushing the <code>WHERE</code> clause down to the table scan level means we filter the rows before they are joined, rather than joining large tables and then filtering the result.</p>
+</li>
+<li><p><strong>Projection Pushdown</strong>: This rule involves pushing down the selection of columns (<code>SELECT</code> clause) to the earliest possible stage. This reduces the amount of data that needs to be moved between operators.</p>
+</li>
+<li><p><strong>Constant Folding</strong>: This rule involves evaluating constant expressions at optimization time rather than at execution time. For example, the expression <code>WHERE Id = 10 + 5</code> would be transformed to <code>WHERE Id = 15</code>.</p>
+</li>
+</ul>
+<h2 id="the-optimization-process">The Optimization Process</h2>
+<p>The optimizer takes the initial AST from the parser and applies these rules iteratively until no more rules can be applied. The resulting transformed tree is the optimized execution plan, which is then passed to the execution engine.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/F0xedb/QoreDB/blob/main/docs/query-engine/optimizer.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

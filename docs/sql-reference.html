@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>SQL Reference | QoreDB Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="SQL Reference | QoreDB Documentation ">
+      
+      
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/F0xedb/QoreDB/blob/main/docs/sql-reference.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sql-reference">SQL Reference</h1>
+
+<p>This document provides a reference for the SQL syntax and operations supported by QoreDB.</p>
+<h2 id="data-types">Data Types</h2>
+<p>QoreDB supports the following data types:</p>
+<ul>
+<li><code>INT</code>: A 32-bit signed integer.</li>
+<li><code>STRING</code>: A variable-length string.</li>
+</ul>
+<h2 id="supported-operations">Supported Operations</h2>
+<h3 id="create-table"><code>CREATE TABLE</code></h3>
+<p>Creates a new table in the database.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="lang-sql">CREATE TABLE table_name (
+    column1_name column1_type,
+    column2_name column2_type,
+    ...
+);
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-sql">CREATE TABLE Users (
+    Id INT,
+    Username STRING,
+    Email STRING
+);
+</code></pre>
+<h3 id="drop-table"><code>DROP TABLE</code></h3>
+<p>Deletes an existing table from the database.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="lang-sql">DROP TABLE table_name;
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-sql">DROP TABLE Users;
+</code></pre>
+<h3 id="insert-into"><code>INSERT INTO</code></h3>
+<p>Inserts a new row of data into a table.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="lang-sql">INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-sql">INSERT INTO Users (Id, Username, Email)
+VALUES (1, 'john_doe', 'john.doe@example.com');
+</code></pre>
+<h3 id="select"><code>SELECT</code></h3>
+<p>Retrieves data from one or more tables.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="lang-sql">SELECT column1, column2, ... | *
+FROM table_name
+[WHERE condition]
+[ORDER BY column_name [ASC | DESC]];
+</code></pre>
+<p><strong>Clauses:</strong></p>
+<ul>
+<li><strong><code>SELECT ...</code></strong>: Specifies the columns to be returned. Use <code>*</code> to select all columns.</li>
+<li><strong><code>FROM ...</code></strong>: Specifies the table to retrieve data from.</li>
+<li><strong><code>WHERE ...</code></strong>: Filters rows based on a specified condition.</li>
+<li><strong><code>ORDER BY ...</code></strong>: Sorts the result set in ascending (<code>ASC</code>) or descending (<code>DESC</code>) order.</li>
+</ul>
+<p><strong>Supported Operators in <code>WHERE</code> Clause:</strong></p>
+<ul>
+<li><code>=</code> (Equal to)</li>
+<li><code>!=</code> or <code>&lt;&gt;</code> (Not equal to)</li>
+<li><code>&gt;</code> (Greater than)</li>
+<li><code>&lt;</code> (Less than)</li>
+<li><code>&gt;=</code> (Greater than or equal to)</li>
+<li><code>&lt;=</code> (Less than or equal to)</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-sql">SELECT Username, Email
+FROM Users
+WHERE Id &gt; 10
+ORDER BY Username DESC;
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/F0xedb/QoreDB/blob/main/docs/sql-reference.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

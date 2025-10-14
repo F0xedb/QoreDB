@@ -1,0 +1,2686 @@
+{
+  "source_base_path": "/home/runner/work/QoreDB/QoreDB",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Catalog.CatalogManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Catalog.CatalogManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Catalog.CatalogManager",
+      "Summary": "<p sourcefile=\"api/QoreDB.Catalog.CatalogManager.yml\" sourcestartlinenumber=\"1\">Manages the database catalog, which contains schema information</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Catalog.Interfaces.ICatalogManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Catalog.Interfaces.ICatalogManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Catalog.Interfaces.ICatalogManager",
+      "Summary": "<p sourcefile=\"api/QoreDB.Catalog.Interfaces.ICatalogManager.yml\" sourcestartlinenumber=\"1\">Manages the database catalog, which contains schema information</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Catalog.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Catalog.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Catalog.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Catalog.Models.ColumnInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Catalog.Models.ColumnInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Catalog.Models.ColumnInfo",
+      "Summary": "<p sourcefile=\"api/QoreDB.Catalog.Models.ColumnInfo.yml\" sourcestartlinenumber=\"1\">Contains information about a column in a table</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Catalog.Models.TableInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Catalog.Models.TableInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Catalog.Models.TableInfo",
+      "Summary": "<p sourcefile=\"api/QoreDB.Catalog.Models.TableInfo.yml\" sourcestartlinenumber=\"1\">Contains information about a table</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Catalog.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Catalog.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Catalog.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Catalog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Catalog.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Catalog",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Common.Attributes.EnumStringAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Common.Attributes.EnumStringAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Common.Attributes.EnumStringAttribute",
+      "Summary": "<p sourcefile=\"api/QoreDB.Common.Attributes.EnumStringAttribute.yml\" sourcestartlinenumber=\"1\">An attribute used to specify a string representation for an enum member</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Common.Attributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Common.Attributes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Common.Attributes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Common.Extensions.EnumExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Common.Extensions.EnumExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Common.Extensions.EnumExtensions",
+      "Summary": "<p sourcefile=\"api/QoreDB.Common.Extensions.EnumExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for enums</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Common.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Common.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Common.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Database.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Database.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Database",
+      "Summary": "<p sourcefile=\"api/QoreDB.Database.yml\" sourcestartlinenumber=\"1\">Represents the main database entry point</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.ExecutionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.ExecutionContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.ExecutionContext",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.ExecutionContext.yml\" sourcestartlinenumber=\"1\">A concrete implementation of the execution context</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Models.DebugQueryResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Models.DebugQueryResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Models.DebugQueryResult",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.Models.DebugQueryResult.yml\" sourcestartlinenumber=\"1\">A query result that wraps another result and includes diagnostic information</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Models.MessageQueryResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Models.MessageQueryResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Models.MessageQueryResult",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.Models.MessageQueryResult.yml\" sourcestartlinenumber=\"1\">A query result that contains a status message</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Models.ProjectedRow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Models.ProjectedRow.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Models.ProjectedRow",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.Models.ProjectedRow.yml\" sourcestartlinenumber=\"1\">A read-only dictionary that provides a projected view of a source dictionary.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Models.RowsQueryResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Models.RowsQueryResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Models.RowsQueryResult",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.Models.RowsQueryResult.yml\" sourcestartlinenumber=\"1\">A query result that contains a collection of rows</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Operators.BaseExecutionOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Operators.BaseExecutionOperator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Operators.BaseExecutionOperator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Operators.CreateTableOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Operators.CreateTableOperator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Operators.CreateTableOperator",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.Operators.CreateTableOperator.yml\" sourcestartlinenumber=\"1\">An operator that creates a new table in the catalog</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Operators.DropTableOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Operators.DropTableOperator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Operators.DropTableOperator",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.Operators.DropTableOperator.yml\" sourcestartlinenumber=\"1\">An operator that drops a table from the catalog</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Operators.FilterOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Operators.FilterOperator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Operators.FilterOperator",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.Operators.FilterOperator.yml\" sourcestartlinenumber=\"1\">An operator that filters rows from its source based on a predicate</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Operators.InsertOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Operators.InsertOperator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Operators.InsertOperator",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.Operators.InsertOperator.yml\" sourcestartlinenumber=\"1\">An operator that inserts a single row into a table</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Operators.ProjectionOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Operators.ProjectionOperator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Operators.ProjectionOperator",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.Operators.ProjectionOperator.yml\" sourcestartlinenumber=\"1\">An operator that selects a subset of columns from its input</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Operators.SortOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Operators.SortOperator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Operators.SortOperator",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.Operators.SortOperator.yml\" sourcestartlinenumber=\"1\">An operator that sorts rows from its source based on a column</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Operators.TableScanOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Operators.TableScanOperator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Operators.TableScanOperator",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.Operators.TableScanOperator.yml\" sourcestartlinenumber=\"1\">An operator that performs a full scan of a table</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Operators.TakeOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Operators.TakeOperator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Operators.TakeOperator",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.Operators.TakeOperator.yml\" sourcestartlinenumber=\"1\">An operator that takes rows from its source</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.Operators.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.Operators.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.Operators",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.QueryExecutionPlan.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.QueryExecutionPlan.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.QueryExecutionPlan",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.QueryExecutionPlan.yml\" sourcestartlinenumber=\"1\">Represents a complete, executable query plan as a tree of operators</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.QueryExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.QueryExecutor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.QueryExecutor",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.QueryExecutor.yml\" sourcestartlinenumber=\"1\">Executes a query plan by invoking the root operator</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.TimedEnumerable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.TimedEnumerable.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.TimedEnumerable",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.TimedEnumerable.yml\" sourcestartlinenumber=\"1\">Wraps an <xref href=\"System.Collections.Generic.IEnumerable%601\" data-throw-if-not-resolved=\"false\"></xref> to time the enumeration process.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.TimedEnumerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.TimedEnumerator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution.TimedEnumerator",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Execution.TimedEnumerator.yml\" sourcestartlinenumber=\"1\">Wraps an <xref href=\"System.Collections.Generic.IEnumerator%601\" data-throw-if-not-resolved=\"false\"></xref> to time the enumeration process.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Execution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Execution.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Execution",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Expressions.BinaryExpression.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Expressions.BinaryExpression.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Expressions.BinaryExpression",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Expressions.BinaryExpression.yml\" sourcestartlinenumber=\"1\">Represents an expression with a left and right side and an operator, such as (price &gt; 50)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Expressions.ColumnValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Expressions.ColumnValue.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Expressions.ColumnValue",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Expressions.ColumnValue.yml\" sourcestartlinenumber=\"1\">Represents a reference to a column's value within a row</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Expressions.ExpressionEvaluator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Expressions.ExpressionEvaluator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Expressions.ExpressionEvaluator",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Expressions.ExpressionEvaluator.yml\" sourcestartlinenumber=\"1\">Evaluates an expression tree against a given row of data</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Expressions.ExpressionVisitor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Expressions.ExpressionVisitor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Expressions.ExpressionVisitor",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Expressions.IExpression.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Expressions.IExpression.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Expressions.IExpression",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Expressions.IExpression.yml\" sourcestartlinenumber=\"1\">Represents a node in an expression tree, used in WHERE clauses</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Expressions.IExpressionVisitor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Expressions.IExpressionVisitor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Expressions.IExpressionVisitor",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Expressions.IExpressionVisitor.yml\" sourcestartlinenumber=\"1\">Defines a visitor for traversing an expression tree.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Expressions.LiteralValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Expressions.LiteralValue.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Expressions.LiteralValue",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Expressions.LiteralValue.yml\" sourcestartlinenumber=\"1\">Represents a literal (constant) value in an expression, like a number or a string</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Expressions.LogicalExpression.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Expressions.LogicalExpression.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Expressions.LogicalExpression",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Expressions.LogicalExpression.yml\" sourcestartlinenumber=\"1\">Represents a logical expression that combines two other expressions, such as with an AND or OR operator</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Expressions.OperatorType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Expressions.OperatorType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Expressions.OperatorType",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Expressions.OperatorType.yml\" sourcestartlinenumber=\"1\">Defines the types of comparison operators supported in expressions</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Expressions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Expressions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Expressions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Interfaces.IExecutionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Interfaces.IExecutionContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Interfaces.IExecutionContext",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Interfaces.IExecutionContext.yml\" sourcestartlinenumber=\"1\">Provides the context and resources needed for query execution</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Interfaces.IExecutionOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Interfaces.IExecutionOperator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Interfaces.IExecutionOperator",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Interfaces.IExecutionOperator.yml\" sourcestartlinenumber=\"1\">Represents a single step (an operator) in a query execution plan\nEach operator can have a source from which it pulls data</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Interfaces.IQueryExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Interfaces.IQueryExecutor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Interfaces.IQueryExecutor",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Interfaces.IQueryExecutor.yml\" sourcestartlinenumber=\"1\">Defines a component that executes a query plan against the database</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Interfaces.IQueryOptimizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Interfaces.IQueryOptimizer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Interfaces.IQueryOptimizer",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Interfaces.IQueryOptimizer.yml\" sourcestartlinenumber=\"1\">Applies a series of optimization rules to a query execution plan</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Interfaces.IQueryResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Interfaces.IQueryResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Interfaces.IQueryResult",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Interfaces.IQueryResult.yml\" sourcestartlinenumber=\"1\">Represents the result of an executed query</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Interfaces.ISqlParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Interfaces.ISqlParser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Interfaces.ISqlParser",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Interfaces.ISqlParser.yml\" sourcestartlinenumber=\"1\">Defines a component that builds a query execution plan from a raw SQL string</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Optimizer.QueryOptimizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Optimizer.QueryOptimizer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Optimizer.QueryOptimizer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Optimizer.Rules.ExpressionConstantRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Optimizer.Rules.ExpressionConstantRule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Optimizer.Rules.ExpressionConstantRule",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Optimizer.Rules.ExpressionConstantRule.yml\" sourcestartlinenumber=\"1\">An optimization rule that evaluates constant expressions in filter predicates</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Optimizer.Rules.IOptimizerRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Optimizer.Rules.IOptimizerRule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Optimizer.Rules.IOptimizerRule",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Optimizer.Rules.IOptimizerRule.yml\" sourcestartlinenumber=\"1\">Represents a rule that can be applied to an execution plan to optimize it</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Optimizer.Rules.PredicatePushdownRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Optimizer.Rules.PredicatePushdownRule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Optimizer.Rules.PredicatePushdownRule",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Optimizer.Rules.PredicatePushdownRule.yml\" sourcestartlinenumber=\"1\">An optimization rule that pushes filter predicates as far down the execution tree as possible</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Optimizer.Rules.ProjectionPushdownRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Optimizer.Rules.ProjectionPushdownRule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Optimizer.Rules.ProjectionPushdownRule",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Optimizer.Rules.ProjectionPushdownRule.yml\" sourcestartlinenumber=\"1\">An optimization rule that pushes projections as far down the execution tree as possible</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Optimizer.Rules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Optimizer.Rules.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Optimizer.Rules",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Optimizer.Visitors.ColumnCollectorExpressionVisitor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Optimizer.Visitors.ColumnCollectorExpressionVisitor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Optimizer.Visitors.ColumnCollectorExpressionVisitor",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Optimizer.Visitors.ColumnCollectorExpressionVisitor.yml\" sourcestartlinenumber=\"1\">A visitor that traverses an expression tree and collects the names of all columns referenced.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Optimizer.Visitors.ConstantFoldingExpressionVisitor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Optimizer.Visitors.ConstantFoldingExpressionVisitor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Optimizer.Visitors.ConstantFoldingExpressionVisitor",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Optimizer.Visitors.ConstantFoldingExpressionVisitor.yml\" sourcestartlinenumber=\"1\">A visitor that evaluates (folds) constant expressions into a single literal value.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Optimizer.Visitors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Optimizer.Visitors.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Optimizer.Visitors",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Optimizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Optimizer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Optimizer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.ISqlListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.ISqlListener.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.ISqlListener",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Parser.Antlr.ISqlListener.yml\" sourcestartlinenumber=\"1\">This interface defines a complete listener for a parse tree produced by\n<xref href=\"QoreDB.QueryEngine.Parser.Antlr.SqlParser\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.ISqlVisitor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.ISqlVisitor-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.ISqlVisitor<Result>",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Parser.Antlr.ISqlVisitor-1.yml\" sourcestartlinenumber=\"1\">This interface defines a complete generic visitor for a parse tree produced\nby <xref href=\"QoreDB.QueryEngine.Parser.Antlr.SqlParser\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlBaseListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlBaseListener.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlBaseListener",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Parser.Antlr.SqlBaseListener.yml\" sourcestartlinenumber=\"1\">This class provides an empty implementation of <xref href=\"QoreDB.QueryEngine.Parser.Antlr.ISqlListener\" data-throw-if-not-resolved=\"false\"></xref>,\nwhich can be extended to create a listener which only needs to handle a subset\nof the available methods.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor<Result>",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.yml\" sourcestartlinenumber=\"1\">This class provides an empty implementation of <xref href=\"QoreDB.QueryEngine.Parser.Antlr.ISqlVisitor%601\" data-throw-if-not-resolved=\"false\"></xref>,\nwhich can be extended to create a visitor which only needs to handle a subset\nof the available methods.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlLexer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlLexer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlLexer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.AddContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.AddContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.AddContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Additive_expressionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Additive_expressionContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Additive_expressionContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Boolean_expressionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Boolean_expressionContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Boolean_expressionContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.ColumnContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.ColumnContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.ColumnContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Column_defContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Column_defContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Column_defContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Column_definitionsContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Column_definitionsContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Column_definitionsContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Column_listContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Column_listContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Column_listContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.ComparisonContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.ComparisonContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.ComparisonContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Comparison_expressionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Comparison_expressionContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Comparison_expressionContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Create_table_statementContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Create_table_statementContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Create_table_statementContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Drop_table_statementContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Drop_table_statementContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Drop_table_statementContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.ExpressionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.ExpressionContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.ExpressionContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Insert_statementContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Insert_statementContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Insert_statementContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Join_clauseContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Join_clauseContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Join_clauseContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Join_operatorContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Join_operatorContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Join_operatorContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Limit_clauseContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Limit_clauseContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Limit_clauseContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.LiteralContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.LiteralContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.LiteralContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.LogicalAndContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.LogicalAndContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.LogicalAndContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.LogicalOrContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.LogicalOrContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.LogicalOrContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.MulContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.MulContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.MulContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Multiplicative_expressionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Multiplicative_expressionContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Multiplicative_expressionContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedAdditiveContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedAdditiveContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedAdditiveContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedBooleanContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedBooleanContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedBooleanContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedComparisonContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedComparisonContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedComparisonContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedMultiplicativeContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedMultiplicativeContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedMultiplicativeContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedPrimaryContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedPrimaryContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedPrimaryContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Order_by_clauseContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Order_by_clauseContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Order_by_clauseContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.ParenthesizedExpressionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.ParenthesizedExpressionContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.ParenthesizedExpressionContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Primary_expressionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Primary_expressionContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Primary_expressionContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.RootContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.RootContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.RootContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Select_statementContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Select_statementContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Select_statementContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.StatementContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.StatementContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.StatementContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Table_sourceContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Table_sourceContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Table_sourceContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.ValueContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.ValueContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.ValueContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Value_listContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Value_listContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Value_listContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Where_clauseContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.Where_clauseContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser.Where_clauseContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.SqlParser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr.SqlParser",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.Antlr.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.Antlr",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.AstBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.AstBuilder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.AstBuilder",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Parser.AstBuilder.yml\" sourcestartlinenumber=\"1\">This visitor walks the ANTLR parse tree and builds our operator-based query plan (AST)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.ExpressionVisitor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.ExpressionVisitor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.ExpressionVisitor",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Parser.ExpressionVisitor.yml\" sourcestartlinenumber=\"1\">Visits the expression nodes of a parse tree and builds an <xref href=\"QoreDB.QueryEngine.Expressions.IExpression\" data-throw-if-not-resolved=\"false\"></xref> tree</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.SQLParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.SQLParser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.SQLParser",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Parser.SQLParser.yml\" sourcestartlinenumber=\"1\">A parser that uses an ANTLR-generated parser and a visitor to build the execution plan</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.ThrowingErrorListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.ThrowingErrorListener.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser.ThrowingErrorListener",
+      "Summary": "<p sourcefile=\"api/QoreDB.QueryEngine.Parser.ThrowingErrorListener.yml\" sourcestartlinenumber=\"1\">A custom ANTLR error listener that throws a C# exception on syntax errors</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.QueryEngine.Parser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.QueryEngine.Parser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.QueryEngine.Parser",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.ByteExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.ByteExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.ByteExtensions",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.ByteExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for byte arrays.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Constants.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Constants",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.BPlusTree-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.BPlusTree-2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.BPlusTree<TKey, TValue>",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.BPlusTree-2.yml\" sourcestartlinenumber=\"1\">A generic, in-memory implementation of a B+ Tree.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.BackingStorageBPlusTree-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.BackingStorageBPlusTree-2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.BackingStorageBPlusTree<TKey, TValue>",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.BackingStorageBPlusTree-2.yml\" sourcestartlinenumber=\"1\">A BPlusTree implementation that persists its nodes to a pager,\nextending the in-memory BPlusTree logic</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Interfaces.IBPlusTree-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Interfaces.IBPlusTree-2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Interfaces.IBPlusTree<TKey, TValue>",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Interfaces.IBPlusTree-2.yml\" sourcestartlinenumber=\"1\">Interface for a B+ Tree data structure.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Interfaces.INode-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Interfaces.INode-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Interfaces.INode<TKey>",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Interfaces.INode-1.yml\" sourcestartlinenumber=\"1\">Defines the contract for a node within a B+ Tree.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Interfaces.INodeSerializer-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Interfaces.INodeSerializer-2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Interfaces.INodeSerializer<TKey, TValue>",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Interfaces.INodeSerializer-2.yml\" sourcestartlinenumber=\"1\">Interface for serializing and deserializing B+ Tree nodes</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Interfaces.ISerializer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Interfaces.ISerializer-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Interfaces.ISerializer<T>",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Interfaces.ISerializer-1.yml\" sourcestartlinenumber=\"1\">Interface for serializing and deserializing keys and values\nfor storage within the <xref href=\"QoreDB.StorageEngine.Index.Interfaces.IBPlusTree%602\" data-throw-if-not-resolved=\"false\"></xref> pages.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Models.Entry-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Models.Entry-2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Models.Entry<TKey, TValue>",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Models.Entry-2.yml\" sourcestartlinenumber=\"1\">Represents a single key-value pair stored within a leaf node of the B+ Tree.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Nodes.InternalNode-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Nodes.InternalNode-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Nodes.InternalNode<TKey>",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Nodes.InternalNode-1.yml\" sourcestartlinenumber=\"1\">Represents an internal (non-leaf) node in the B+ Tree. Internal nodes contain keys\nthat act as routers and pointers to child nodes. They do not store values.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Nodes.LeafNode-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Nodes.LeafNode-2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Nodes.LeafNode<TKey, TValue>",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Nodes.LeafNode-2.yml\" sourcestartlinenumber=\"1\">Represents a leaf node in the B+ Tree. Leaf nodes store the actual key-value pairs (entries).\nAll leaf nodes are linked together in a doubly-linked list for efficient range scans.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Nodes.Node-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Nodes.Node-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Nodes.Node<TKey>",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Nodes.Node-1.yml\" sourcestartlinenumber=\"1\">Provides an abstract base implementation for all nodes in the B+ Tree.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Nodes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Nodes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Nodes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.ColumnInfoSerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.ColumnInfoSerializer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer.ColumnInfoSerializer",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Serializer.ColumnInfoSerializer.yml\" sourcestartlinenumber=\"1\">Handles serialization and deserialization for ColumnInfo objects</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Header.InternalNodeHeader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Header.InternalNodeHeader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer.Header.InternalNodeHeader",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Serializer.Header.InternalNodeHeader.yml\" sourcestartlinenumber=\"1\">Represents the specific header for an Internal Node page.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Header.LeafNodeHeader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Header.LeafNodeHeader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer.Header.LeafNodeHeader",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Serializer.Header.LeafNodeHeader.yml\" sourcestartlinenumber=\"1\">Represents the specific header for a Leaf Node page.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Header.NodeHeader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Header.NodeHeader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer.Header.NodeHeader",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Serializer.Header.NodeHeader.yml\" sourcestartlinenumber=\"1\">Defines the common structure for all node page headers.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Header.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Header.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer.Header",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Implementations.ByteArraySerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Implementations.ByteArraySerializer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer.Implementations.ByteArraySerializer",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Serializer.Implementations.ByteArraySerializer.yml\" sourcestartlinenumber=\"1\">A simple serializer for byte arrays values</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Implementations.IntSerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Implementations.IntSerializer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer.Implementations.IntSerializer",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Serializer.Implementations.IntSerializer.yml\" sourcestartlinenumber=\"1\">A simple serializer for integer keys</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Implementations.RowSerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Implementations.RowSerializer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer.Implementations.RowSerializer",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Serializer.Implementations.RowSerializer.yml\" sourcestartlinenumber=\"1\">Serializes and deserializes table rows based on a given schema</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Implementations.StringSerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Implementations.StringSerializer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer.Implementations.StringSerializer",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Serializer.Implementations.StringSerializer.yml\" sourcestartlinenumber=\"1\">A simple serializer for string values</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Implementations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.Implementations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer.Implementations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.LeafSerializationBytes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.LeafSerializationBytes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer.LeafSerializationBytes",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Serializer.LeafSerializationBytes.yml\" sourcestartlinenumber=\"1\">Contains the constant byte identifiers for node types.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.NodeSerializer-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.NodeSerializer-2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer.NodeSerializer<TKey, TValue>",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Serializer.NodeSerializer-2.yml\" sourcestartlinenumber=\"1\">Handles the serialization and deserialization of B+ Tree nodes to and from byte arrays.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.TableInfoSerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.TableInfoSerializer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer.TableInfoSerializer",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Index.Serializer.TableInfoSerializer.yml\" sourcestartlinenumber=\"1\">Handles serialization and deserialization for TableInfo objects</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.Serializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.Serializer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index.Serializer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Index.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Index.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Index",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Pager.BasePager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Pager.BasePager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Pager.BasePager",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Pager.BasePager.yml\" sourcestartlinenumber=\"1\">Provides a base implementation for a pager that manages reading and writing\npages to an underlying stream, with an integrated LRU (Least Recently Used) caching mechanism.\nThis class is abstract and must be inherited by a concrete pager implementation\nthat provides the specific stream (e.g., FileStream or MemoryStream).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Pager.InMemoryQorePager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Pager.InMemoryQorePager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Pager.InMemoryQorePager",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Pager.InMemoryQorePager.yml\" sourcestartlinenumber=\"1\">A concrete pager implementation that uses an in-memory stream for data storage.\nThis is useful for temporary databases or for unit testing the storage engine\nwithout hitting the file system.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Pager.Interfaces.IPager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Pager.Interfaces.IPager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Pager.Interfaces.IPager",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Pager.Interfaces.IPager.yml\" sourcestartlinenumber=\"1\">Defines the core contract for a pager component, which is responsible for\nreading and writing fixed-size pages to and from an underlying data stream.\nThis interface abstracts the direct interaction with the data source.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Pager.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Pager.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Pager.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Pager.Models.QorePage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Pager.Models.QorePage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Pager.Models.QorePage",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Pager.Models.QorePage.yml\" sourcestartlinenumber=\"1\">Represents a single, fixed-size page of data held in memory.\nThis class acts as the unit of transfer between the storage engine and the in-memory cache.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Pager.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Pager.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Pager.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Pager.QorePager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Pager.QorePager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Pager.QorePager",
+      "Summary": "<p sourcefile=\"api/QoreDB.StorageEngine.Pager.QorePager.yml\" sourcestartlinenumber=\"1\">A concrete pager implementation that uses a physical file on disk for data storage.\nThis pager is responsible for persisting data between application sessions.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.Pager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.Pager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine.Pager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.StorageEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.StorageEngine.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.StorageEngine",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Commands.BTreeCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Commands.BTreeCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Commands.BTreeCommand",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Commands.BTreeCommand.yml\" sourcestartlinenumber=\"1\">Visualizes the B+ Tree for a specific table.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Commands.BaseCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Commands.BaseCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Commands.BaseCommand",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Commands.BaseCommand.yml\" sourcestartlinenumber=\"1\">A base class for commands to share common functionality if needed in the future.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Commands.DebugCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Commands.DebugCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Commands.DebugCommand",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Commands.DebugCommand.yml\" sourcestartlinenumber=\"1\">Toggles the developer debug mode.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Commands.DescribeTableCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Commands.DescribeTableCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Commands.DescribeTableCommand",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Commands.DescribeTableCommand.yml\" sourcestartlinenumber=\"1\">Describes the columns and types of a specific table.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Commands.ExitCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Commands.ExitCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Commands.ExitCommand",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Commands.ExitCommand.yml\" sourcestartlinenumber=\"1\">Exits the QoreDB shell.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Commands.HelpCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Commands.HelpCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Commands.HelpCommand",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Commands.HelpCommand.yml\" sourcestartlinenumber=\"1\">Displays the help message with all available commands.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Commands.ICommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Commands.ICommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Commands.ICommand",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Commands.ICommand.yml\" sourcestartlinenumber=\"1\">Represents a meta-command that can be executed in the TUI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Commands.ImportCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Commands.ImportCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Commands.ImportCommand",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Commands.ImportCommand.yml\" sourcestartlinenumber=\"1\">Imports and executes SQL statements from a file.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Commands.InfoCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Commands.InfoCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Commands.InfoCommand",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Commands.InfoCommand.yml\" sourcestartlinenumber=\"1\">Displays version and author information for the database.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Commands.ListTablesCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Commands.ListTablesCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Commands.ListTablesCommand",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Commands.ListTablesCommand.yml\" sourcestartlinenumber=\"1\">Lists all tables in the database.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Commands.NewDatabaseCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Commands.NewDatabaseCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Commands.NewDatabaseCommand",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Commands.NewDatabaseCommand.yml\" sourcestartlinenumber=\"1\">Creates a new in-memory database with specified parameters.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Commands.OptimizeCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Commands.OptimizeCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Commands.OptimizeCommand",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Commands.OptimizeCommand.yml\" sourcestartlinenumber=\"1\">Toggles the query execution plan optimization mode.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Commands.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Commands",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Program.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Program",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Repl.CommandProcessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Repl.CommandProcessor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Repl.CommandProcessor",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Repl.CommandProcessor.yml\" sourcestartlinenumber=\"1\">Discovers, manages, and executes meta-commands.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Repl.QoreDbRepl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Repl.QoreDbRepl.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Repl.QoreDbRepl",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Repl.QoreDbRepl.yml\" sourcestartlinenumber=\"1\">Encapsulates the main Read-Eval-Print Loop (REPL) for the QoreDB shell.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Repl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Repl.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Repl",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.SqlAutoCompleteHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.SqlAutoCompleteHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.SqlAutoCompleteHandler",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.SqlAutoCompleteHandler.yml\" sourcestartlinenumber=\"1\">A sophisticated, context-aware autocompletion handler for both meta-commands and SQL.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Tui.ExecutionOperatorExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Tui.ExecutionOperatorExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Tui.ExecutionOperatorExtensions",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Tui.ExecutionOperatorExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for the IExecutionOperator interface to simplify\ntraversal and analysis of the execution plan tree.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Tui.Printers.DebugResultPrinter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Tui.Printers.DebugResultPrinter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Tui.Printers.DebugResultPrinter",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Tui.Printers.DebugResultPrinter.yml\" sourcestartlinenumber=\"1\">A printer strategy for handling the detailed debug query result.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Tui.Printers.IResultPrinter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Tui.Printers.IResultPrinter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Tui.Printers.IResultPrinter",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Tui.Printers.IResultPrinter.yml\" sourcestartlinenumber=\"1\">Defines the contract for a strategy that prints a query result to the console.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Tui.Printers.StandardResultPrinter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Tui.Printers.StandardResultPrinter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Tui.Printers.StandardResultPrinter",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Tui.Printers.StandardResultPrinter.yml\" sourcestartlinenumber=\"1\">A printer strategy for handling standard query results (messages and row sets).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Tui.Printers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Tui.Printers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Tui.Printers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Tui.QueryResultPrinterFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Tui.QueryResultPrinterFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Tui.QueryResultPrinterFactory",
+      "Summary": "<p sourcefile=\"api/QoreDB.Tui.Tui.QueryResultPrinterFactory.yml\" sourcestartlinenumber=\"1\">A factory for creating the appropriate result printer based on the query result type.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.Tui.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.Tui.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui.Tui",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.Tui.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.Tui.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.Tui",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.VersionInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.VersionInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB.VersionInfo",
+      "Summary": "<p sourcefile=\"api/QoreDB.VersionInfo.yml\" sourcestartlinenumber=\"1\">Contains version and author information for the database engine</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/QoreDB.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QoreDB.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "QoreDB",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/architecture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/catalog-manager.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/catalog-manager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/contributing.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/contributing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/query-engine/executor.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/query-engine/executor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/query-engine/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/query-engine/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/query-engine/optimizer.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/query-engine/optimizer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/query-engine/parser.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/query-engine/parser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/query-engine/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/query-engine/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/query-engine/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/sql-reference.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/sql-reference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/storage-engine/b-plus-tree.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/storage-engine/b-plus-tree.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/storage-engine/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/storage-engine/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/storage-engine/pager.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/storage-engine/pager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/storage-engine/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/storage-engine/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/storage-engine/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/tui-shell.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/tui-shell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

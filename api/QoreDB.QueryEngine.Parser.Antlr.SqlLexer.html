@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class SqlLexer | QoreDB Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SqlLexer | QoreDB Documentation ">
+      
+      
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/F0xedb/QoreDB/new/main/apiSpec/new?filename=QoreDB_QueryEngine_Parser_Antlr_SqlLexer.md&amp;value=---%0Auid%3A%20QoreDB.QueryEngine.Parser.Antlr.SqlLexer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer">
+
+
+
+  <h1 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer" class="text-break">
+Class SqlLexer  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="QoreDB.html">QoreDB</a>.<a class="xref" href="QoreDB.QueryEngine.html">QueryEngine</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.html">Parser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.html">Antlr</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>QoreDB.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public class SqlLexer : Lexer, IRecognizer, ITokenSource</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Recognizer</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <span class="xref">LexerATNSimulator</span>&gt;</div>
+      <div><span class="xref">Lexer</span></div>
+      <div><span class="xref">SqlLexer</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><span class="xref">IRecognizer</span></div>
+      <div><span class="xref">ITokenSource</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <span class="xref">Lexer.DEFAULT_MODE</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.DefaultTokenChannel</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.Hidden</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.MinCharValue</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.MaxCharValue</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.Output</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.ErrorOutput</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.Reset()</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.NextToken()</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.Skip()</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.More()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Lexer.Mode(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Lexer.PushMode(int)</a>
+    </div>
+    <div>
+      <span class="xref">Lexer.PopMode()</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.SetInputStream(ICharStream)</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.Emit(IToken)</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.Emit()</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.EmitEOF()</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.GetAllTokens()</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.Recover(LexerNoViableAltException)</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.NotifyListeners(LexerNoViableAltException)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Lexer.GetErrorDisplay(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Lexer.GetErrorDisplay(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Lexer.GetCharErrorDisplay(int)</a>
+    </div>
+    <div>
+      <span class="xref">Lexer.Recover(RecognitionException)</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.TokenFactory</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.SourceName</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.InputStream</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.Line</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.Column</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.CharIndex</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.TokenStartCharIndex</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.TokenStartLine</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.TokenStartColumn</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.Text</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.Token</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.Type</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.Channel</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.ModeStack</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.CurrentMode</span>
+    </div>
+    <div>
+      <span class="xref">Lexer.HitEOF</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.Eof</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.CreateTokenTypeMap(IVocabulary)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Recognizer&lt;int, LexerATNSimulator&gt;.GetTokenType(string)</a>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.GetErrorHeader(RecognitionException)</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.GetTokenErrorDisplay(IToken)</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.AddErrorListener(IAntlrErrorListener&lt;int&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.RemoveErrorListener(IAntlrErrorListener&lt;int&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.RemoveErrorListeners()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Recognizer&lt;int, LexerATNSimulator&gt;.Sempred(RuleContext, int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Recognizer&lt;int, LexerATNSimulator&gt;.Precpred(RuleContext, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Recognizer&lt;int, LexerATNSimulator&gt;.Action(RuleContext, int, int)</a>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.RuleNames</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.Vocabulary</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.TokenTypeMap</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.RuleIndexMap</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.SerializedAtn</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.GrammarFileName</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.Atn</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.Interpreter</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.ParseInfo</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.ErrorListeners</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.ErrorListenerDispatch</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.State</span>
+    </div>
+    <div>
+      <span class="xref">Recognizer&lt;int, LexerATNSimulator&gt;.InputStream</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer__ctor_" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.#ctor*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer__ctor_Antlr4_Runtime_ICharStream_" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.#ctor(Antlr4.Runtime.ICharStream)">
+  SqlLexer(ICharStream)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SqlLexer(ICharStream input)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <span class="xref">ICharStream</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer__ctor_" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.#ctor*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer__ctor_Antlr4_Runtime_ICharStream_System_IO_TextWriter_System_IO_TextWriter_" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.#ctor(Antlr4.Runtime.ICharStream,System.IO.TextWriter,System.IO.TextWriter)">
+  SqlLexer(ICharStream, TextWriter, TextWriter)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SqlLexer(ICharStream input, TextWriter output, TextWriter errorOutput)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <span class="xref">ICharStream</span></dt>
+    <dd></dd>
+    <dt><code>output</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a></dt>
+    <dd></dd>
+    <dt><code>errorOutput</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_AND" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.AND">
+  AND
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int AND = 19</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_ASC" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.ASC">
+  ASC
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int ASC = 4</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_ASTERISK" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.ASTERISK">
+  ASTERISK
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int ASTERISK = 14</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_BY" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.BY">
+  BY
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int BY = 3</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_COMMA" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.COMMA">
+  COMMA
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int COMMA = 37</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_COMMENT" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.COMMENT">
+  COMMENT
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int COMMENT = 42</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_CREATE" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.CREATE">
+  CREATE
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int CREATE = 6</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_DESC" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.DESC">
+  DESC
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int DESC = 5</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_DROP" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.DROP">
+  DROP
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int DROP = 8</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_DefaultVocabulary" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.DefaultVocabulary">
+  DefaultVocabulary
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly IVocabulary DefaultVocabulary</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">IVocabulary</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_EQUAL" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.EQUAL">
+  EQUAL
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int EQUAL = 26</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_EXISTS" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.EXISTS">
+  EXISTS
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int EXISTS = 16</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_FROM" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.FROM">
+  FROM
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int FROM = 10</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_GREATER_THAN" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.GREATER_THAN">
+  GREATER_THAN
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int GREATER_THAN = 27</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_GTE" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.GTE">
+  GTE
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int GTE = 29</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_ID" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.ID">
+  ID
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int ID = 34</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_IF" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.IF">
+  IF
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int IF = 15</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_INNER" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.INNER">
+  INNER
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int INNER = 25</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_INSERT" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.INSERT">
+  INSERT
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int INSERT = 11</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_INTO" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.INTO">
+  INTO
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int INTO = 12</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_JOIN" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.JOIN">
+  JOIN
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int JOIN = 21</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_LEFT" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.LEFT">
+  LEFT
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int LEFT = 23</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_LESS_THAN" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.LESS_THAN">
+  LESS_THAN
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int LESS_THAN = 28</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_LIMIT" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.LIMIT">
+  LIMIT
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int LIMIT = 17</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_LPAREN" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.LPAREN">
+  LPAREN
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int LPAREN = 38</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_LTE" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.LTE">
+  LTE
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int LTE = 30</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_MINUS" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.MINUS">
+  MINUS
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int MINUS = 32</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_NUMBER" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.NUMBER">
+  NUMBER
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int NUMBER = 36</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_OFFSET" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.OFFSET">
+  OFFSET
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int OFFSET = 18</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_ON" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.ON">
+  ON
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int ON = 22</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_OR" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.OR">
+  OR
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int OR = 20</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_ORDER" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.ORDER">
+  ORDER
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int ORDER = 2</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_PLUS" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.PLUS">
+  PLUS
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int PLUS = 31</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_RIGHT" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.RIGHT">
+  RIGHT
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int RIGHT = 24</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_RPAREN" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.RPAREN">
+  RPAREN
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int RPAREN = 39</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_SELECT" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.SELECT">
+  SELECT
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int SELECT = 9</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_SEMI" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.SEMI">
+  SEMI
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int SEMI = 40</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_SLASH" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.SLASH">
+  SLASH
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int SLASH = 33</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_STRING_LITERAL" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.STRING_LITERAL">
+  STRING_LITERAL
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int STRING_LITERAL = 35</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_TABLE" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.TABLE">
+  TABLE
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int TABLE = 7</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_VALUES" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.VALUES">
+  VALUES
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int VALUES = 13</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_WHERE" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.WHERE">
+  WHERE
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int WHERE = 1</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_WS" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.WS">
+  WS
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int WS = 41</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer__ATN" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer._ATN">
+  _ATN
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L206"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly ATN _ATN</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">ATN</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_channelNames" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.channelNames">
+  channelNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string[] channelNames</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_decisionToDFA" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.decisionToDFA">
+  decisionToDFA
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static DFA[] decisionToDFA</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">DFA</span>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_modeNames" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.modeNames">
+  modeNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string[] modeNames</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_ruleNames" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.ruleNames">
+  ruleNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly string[] ruleNames</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_sharedContextCache" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.sharedContextCache">
+  sharedContextCache
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static PredictionContextCache sharedContextCache</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">PredictionContextCache</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_ChannelNames_" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.ChannelNames*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_ChannelNames" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.ChannelNames">
+  ChannelNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string[] ChannelNames { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_GrammarFileName_" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.GrammarFileName*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_GrammarFileName" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.GrammarFileName">
+  GrammarFileName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>For debugging and other purposes, might want the grammar name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GrammarFileName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_GrammarFileName_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>For debugging and other purposes, might want the grammar name.
+Have ANTLR generate an implementation for this method.</p>
+</div>
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_ModeNames_" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.ModeNames*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_ModeNames" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.ModeNames">
+  ModeNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string[] ModeNames { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_RuleNames_" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.RuleNames*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_RuleNames" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.RuleNames">
+  RuleNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Used to print out token names like ID during debugging and
+error reporting.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string[] RuleNames { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_RuleNames_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Used to print out token names like ID during debugging and
+error reporting.  The generated parsers implement a method
+that overrides this to point to their String[] tokenNames.</p>
+</div>
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_SerializedAtn_" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.SerializedAtn*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_SerializedAtn" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.SerializedAtn">
+  SerializedAtn
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If this recognizer was generated, it will have a serialized ATN
+representation of the grammar.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int[] SerializedAtn { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_SerializedAtn_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>If this recognizer was generated, it will have a serialized ATN
+representation of the grammar.</p>
+<p>For interpreters, we don't know their serialized ATN despite having
+created the interpreter from it.</p>
+</div>
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_Vocabulary_" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.Vocabulary*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_Vocabulary" data-uid="QoreDB.QueryEngine.Parser.Antlr.SqlLexer.Vocabulary">
+  Vocabulary
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get the vocabulary used by the recognizer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[NotNull]
+public override IVocabulary Vocabulary { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">IVocabulary</span></dt>
+    <dd><p>A
+<span class="xref">Antlr4.Runtime.IVocabulary</span>
+instance providing information about the
+vocabulary used by the grammar.</p>
+</dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="QoreDB_QueryEngine_Parser_Antlr_SqlLexer_Vocabulary_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Get the vocabulary used by the recognizer.</p>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/Antlr/QueryEngine/Parser/Antlr/QoreDB/QueryEngine/Parser/SqlLexer.cs/#L31" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

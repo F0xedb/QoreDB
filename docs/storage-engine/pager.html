@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>The Pager | QoreDB Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="The Pager | QoreDB Documentation ">
+      
+      
+      <link rel="icon" href="../../images/logo.svg">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/F0xedb/QoreDB/blob/main/docs/storage-engine/pager.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="the-pager">The Pager</h1>
+
+<p>The Pager is a critical component of the storage engine, acting as an intermediary between the database's higher-level components and the physical storage on disk.</p>
+<h2 id="page-based-architecture">Page-Based Architecture</h2>
+<p>Databases typically manage data in fixed-size blocks called <strong>pages</strong>. All disk I/O is done in units of pages. This approach has several advantages:</p>
+<ul>
+<li><strong>Efficient I/O</strong>: Reading a single large block from disk is more efficient than reading many small, scattered pieces of data.</li>
+<li><strong>Simplified Memory Management</strong>: The buffer pool in memory can be managed as an array of page-sized slots.</li>
+</ul>
+<p>In QoreDB, the page size is a constant, typically 4KB.</p>
+<h2 id="responsibilities-of-the-pager">Responsibilities of the Pager</h2>
+<ul>
+<li><strong>Reading and Writing Pages</strong>: The pager provides an API for reading a specific page from the database file into memory and writing a page from memory back to the file.</li>
+<li><strong>Buffer Pool Management</strong>: To avoid a disk read every time a page is needed, the pager maintains a cache of pages in memory, known as the <strong>buffer pool</strong>. When a page is requested, the pager first checks if it's already in the buffer pool. If it is, a disk read is avoided.</li>
+<li><strong>Concurrency Control</strong>: In a multi-user database, the pager would also be responsible for managing locks on pages to ensure data consistency. (Note: The current version of QoreDB is single-user).</li>
+</ul>
+<h2 id="the-qoredb-pager">The QoreDB Pager</h2>
+<p>QoreDB includes two pager implementations:</p>
+<ul>
+<li><strong><code>QorePager</code></strong>: A disk-based pager that manages a database file on disk.</li>
+<li><strong><code>InMemoryQorePager</code></strong>: An in-memory pager used for testing and transient databases.</li>
+</ul>
+<p>By abstracting away the details of disk I/O, the pager allows the rest of the database to work with data in a more abstract, page-oriented manner.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/F0xedb/QoreDB/blob/main/docs/storage-engine/pager.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

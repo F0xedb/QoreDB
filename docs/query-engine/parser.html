@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>SQL Parser | QoreDB Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="SQL Parser | QoreDB Documentation ">
+      
+      
+      <link rel="icon" href="../../images/logo.svg">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/F0xedb/QoreDB/blob/main/docs/query-engine/parser.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sql-parser">SQL Parser</h1>
+
+<p>The first step in processing a SQL query is parsing. The parser's job is to take a raw SQL string and convert it into a structured, hierarchical representation known as an Abstract Syntax Tree (AST).</p>
+<h2 id="antlr-the-parser-generator">ANTLR: The Parser Generator</h2>
+<p>QoreDB uses <strong>ANTLR (ANother Tool for Language Recognition)</strong> to generate its SQL parser. ANTLR is a powerful parser generator that takes a grammar file as input and generates the necessary C# code to parse the language described by that grammar.</p>
+<h3 id="the-sql-grammar-sqlg4">The SQL Grammar (<code>Sql.g4</code>)</h3>
+<p>The grammar for QoreDB's supported SQL dialect is defined in the <code>Sql.g4</code> file. This file contains a set of rules that describe the syntax of the language, including statements, expressions, and keywords.</p>
+<p>When the project is built, the ANTLR tool processes this grammar file and generates the lexer and parser classes that are used by the query engine.</p>
+<h2 id="the-parsing-process">The Parsing Process</h2>
+<ol>
+<li><p><strong>Lexical Analysis (Lexing)</strong>: The input SQL string is broken down into a sequence of tokens. For example, the query <code>SELECT Name FROM Users</code> would be tokenized into <code>SELECT</code>, <code>Name</code>, <code>FROM</code>, <code>Users</code>.</p>
+</li>
+<li><p><strong>Syntactic Analysis (Parsing)</strong>: The sequence of tokens is then analyzed to ensure it conforms to the SQL grammar. If the syntax is valid, the parser builds an AST.</p>
+</li>
+</ol>
+<h2 id="the-abstract-syntax-tree-ast">The Abstract Syntax Tree (AST)</h2>
+<p>The AST is a tree-like data structure that represents the syntactic structure of the SQL query. Each node in the tree represents a construct in the query. For example, a <code>SELECT</code> statement would be represented by a <code>SelectNode</code> in the tree, with children representing the columns, table, and <code>WHERE</code> clause.</p>
+<p>This AST is then passed on to the next stage of the query engine: the optimizer.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/F0xedb/QoreDB/blob/main/docs/query-engine/parser.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

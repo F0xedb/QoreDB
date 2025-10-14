@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ExpressionVisitor | QoreDB Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ExpressionVisitor | QoreDB Documentation ">
+      
+      <meta name="description" content="Visits the expression nodes of a parse tree and builds an  tree">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/F0xedb/QoreDB/new/main/apiSpec/new?filename=QoreDB_QueryEngine_Parser_ExpressionVisitor.md&amp;value=---%0Auid%3A%20QoreDB.QueryEngine.Parser.ExpressionVisitor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor">
+
+
+
+  <h1 id="QoreDB_QueryEngine_Parser_ExpressionVisitor" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor" class="text-break">
+Class ExpressionVisitor  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="QoreDB.html">QoreDB</a>.<a class="xref" href="QoreDB.QueryEngine.html">QueryEngine</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.html">Parser</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>QoreDB.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Visits the expression nodes of a parse tree and builds an <a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a> tree</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ExpressionVisitor : SqlBaseVisitor&lt;IExpression&gt;, ISqlVisitor&lt;IExpression&gt;, IParseTreeVisitor&lt;IExpression&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">AbstractParseTreeVisitor</span>&lt;<a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a>&gt;</div>
+      <div><a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html">SqlBaseVisitor</a>&lt;<a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a>&gt;</div>
+      <div><span class="xref">ExpressionVisitor</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.ISqlVisitor-1.html">ISqlVisitor</a>&lt;<a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a>&gt;</div>
+      <div><span class="xref">IParseTreeVisitor</span>&lt;<a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitRoot_QoreDB_QueryEngine_Parser_Antlr_SqlParser_RootContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitRoot(SqlParser.RootContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitStatement_QoreDB_QueryEngine_Parser_Antlr_SqlParser_StatementContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitStatement(SqlParser.StatementContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitInsert_statement_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Insert_statementContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitInsert_statement(SqlParser.Insert_statementContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitSelect_statement_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Select_statementContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitSelect_statement(SqlParser.Select_statementContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitTable_source_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Table_sourceContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitTable_source(SqlParser.Table_sourceContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitJoin_clause_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Join_clauseContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitJoin_clause(SqlParser.Join_clauseContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitJoin_operator_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Join_operatorContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitJoin_operator(SqlParser.Join_operatorContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitCreate_table_statement_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Create_table_statementContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitCreate_table_statement(SqlParser.Create_table_statementContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitDrop_table_statement_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Drop_table_statementContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitDrop_table_statement(SqlParser.Drop_table_statementContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitWhere_clause_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Where_clauseContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitWhere_clause(SqlParser.Where_clauseContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitOrder_by_clause_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Order_by_clauseContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitOrder_by_clause(SqlParser.Order_by_clauseContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitLimit_clause_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Limit_clauseContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitLimit_clause(SqlParser.Limit_clauseContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitColumn_definitions_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Column_definitionsContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitColumn_definitions(SqlParser.Column_definitionsContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitColumn_def_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Column_defContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitColumn_def(SqlParser.Column_defContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitColumn_list_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Column_listContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitColumn_list(SqlParser.Column_listContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitValue_list_QoreDB_QueryEngine_Parser_Antlr_SqlParser_Value_listContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitValue_list(SqlParser.Value_listContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlBaseVisitor-1.html#QoreDB_QueryEngine_Parser_Antlr_SqlBaseVisitor_1_VisitValue_QoreDB_QueryEngine_Parser_Antlr_SqlParser_ValueContext_">SqlBaseVisitor&lt;IExpression&gt;.VisitValue(SqlParser.ValueContext)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractParseTreeVisitor&lt;IExpression&gt;.Visit(IParseTree)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractParseTreeVisitor&lt;IExpression&gt;.VisitChildren(IRuleNode)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractParseTreeVisitor&lt;IExpression&gt;.VisitTerminal(ITerminalNode)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractParseTreeVisitor&lt;IExpression&gt;.VisitErrorNode(IErrorNode)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractParseTreeVisitor&lt;IExpression&gt;.AggregateResult(IExpression, IExpression)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractParseTreeVisitor&lt;IExpression&gt;.ShouldVisitNextChild(IRuleNode, IExpression)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractParseTreeVisitor&lt;IExpression&gt;.DefaultResult</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitAdd_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitAdd*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitAdd_QoreDB_QueryEngine_Parser_Antlr_SqlParser_AddContext_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitAdd(QoreDB.QueryEngine.Parser.Antlr.SqlParser.AddContext)">
+  VisitAdd(AddContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits an additive expression and constructs a <a class="xref" href="QoreDB.QueryEngine.Expressions.BinaryExpression.html">BinaryExpression</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IExpression VisitAdd(SqlParser.AddContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.html">SqlParser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.AddContext.html">AddContext</a></dt>
+    <dd><p>The parse tree context for the additive expression</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a></dt>
+    <dd><p>A new <a class="xref" href="QoreDB.QueryEngine.Expressions.BinaryExpression.html">BinaryExpression</a> representing the addition or subtraction</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitColumn_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitColumn*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitColumn_QoreDB_QueryEngine_Parser_Antlr_SqlParser_ColumnContext_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitColumn(QoreDB.QueryEngine.Parser.Antlr.SqlParser.ColumnContext)">
+  VisitColumn(ColumnContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits a column identifier and constructs a <a class="xref" href="QoreDB.QueryEngine.Expressions.ColumnValue.html">ColumnValue</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IExpression VisitColumn(SqlParser.ColumnContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.html">SqlParser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.ColumnContext.html">ColumnContext</a></dt>
+    <dd><p>The parse tree context for the column identifier</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a></dt>
+    <dd><p>A new <a class="xref" href="QoreDB.QueryEngine.Expressions.ColumnValue.html">ColumnValue</a> representing the column reference</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitComparison_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitComparison*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitComparison_QoreDB_QueryEngine_Parser_Antlr_SqlParser_ComparisonContext_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitComparison(QoreDB.QueryEngine.Parser.Antlr.SqlParser.ComparisonContext)">
+  VisitComparison(ComparisonContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits a comparison expression and constructs a <a class="xref" href="QoreDB.QueryEngine.Expressions.BinaryExpression.html">BinaryExpression</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IExpression VisitComparison(SqlParser.ComparisonContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.html">SqlParser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.ComparisonContext.html">ComparisonContext</a></dt>
+    <dd><p>The parse tree context for the comparison expression</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a></dt>
+    <dd><p>A new <a class="xref" href="QoreDB.QueryEngine.Expressions.BinaryExpression.html">BinaryExpression</a> representing the comparison</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitLiteral_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitLiteral*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitLiteral_QoreDB_QueryEngine_Parser_Antlr_SqlParser_LiteralContext_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitLiteral(QoreDB.QueryEngine.Parser.Antlr.SqlParser.LiteralContext)">
+  VisitLiteral(LiteralContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits a literal value and constructs a <a class="xref" href="QoreDB.QueryEngine.Expressions.LiteralValue.html">LiteralValue</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IExpression VisitLiteral(SqlParser.LiteralContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.html">SqlParser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.LiteralContext.html">LiteralContext</a></dt>
+    <dd><p>The parse tree context for the literal value</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a></dt>
+    <dd><p>A new <a class="xref" href="QoreDB.QueryEngine.Expressions.LiteralValue.html">LiteralValue</a> representing the parsed literal</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitLogicalAnd_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitLogicalAnd*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitLogicalAnd_QoreDB_QueryEngine_Parser_Antlr_SqlParser_LogicalAndContext_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitLogicalAnd(QoreDB.QueryEngine.Parser.Antlr.SqlParser.LogicalAndContext)">
+  VisitLogicalAnd(LogicalAndContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits a logical AND expression and constructs a <a class="xref" href="QoreDB.QueryEngine.Expressions.LogicalExpression.html">LogicalExpression</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IExpression VisitLogicalAnd(SqlParser.LogicalAndContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.html">SqlParser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.LogicalAndContext.html">LogicalAndContext</a></dt>
+    <dd><p>The parse tree context for the logical AND expression</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a></dt>
+    <dd><p>A new <a class="xref" href="QoreDB.QueryEngine.Expressions.LogicalExpression.html">LogicalExpression</a> representing the AND operation</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitLogicalOr_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitLogicalOr*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitLogicalOr_QoreDB_QueryEngine_Parser_Antlr_SqlParser_LogicalOrContext_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitLogicalOr(QoreDB.QueryEngine.Parser.Antlr.SqlParser.LogicalOrContext)">
+  VisitLogicalOr(LogicalOrContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits a logical OR expression and constructs a <a class="xref" href="QoreDB.QueryEngine.Expressions.LogicalExpression.html">LogicalExpression</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IExpression VisitLogicalOr(SqlParser.LogicalOrContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.html">SqlParser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.LogicalOrContext.html">LogicalOrContext</a></dt>
+    <dd><p>The parse tree context for the logical OR expression</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a></dt>
+    <dd><p>A new <a class="xref" href="QoreDB.QueryEngine.Expressions.LogicalExpression.html">LogicalExpression</a> representing the OR operation</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitMul_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitMul*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitMul_QoreDB_QueryEngine_Parser_Antlr_SqlParser_MulContext_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitMul(QoreDB.QueryEngine.Parser.Antlr.SqlParser.MulContext)">
+  VisitMul(MulContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits a multiplicative expression and constructs a <a class="xref" href="QoreDB.QueryEngine.Expressions.BinaryExpression.html">BinaryExpression</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IExpression VisitMul(SqlParser.MulContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.html">SqlParser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.MulContext.html">MulContext</a></dt>
+    <dd><p>The parse tree context for the multiplicative expression</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a></dt>
+    <dd><p>A new <a class="xref" href="QoreDB.QueryEngine.Expressions.BinaryExpression.html">BinaryExpression</a> representing the multiplication or division</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitNestedAdditive_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitNestedAdditive*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitNestedAdditive_QoreDB_QueryEngine_Parser_Antlr_SqlParser_NestedAdditiveContext_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitNestedAdditive(QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedAdditiveContext)">
+  VisitNestedAdditive(NestedAdditiveContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L148"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delegates the visit to the nested additive expression</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IExpression VisitNestedAdditive(SqlParser.NestedAdditiveContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.html">SqlParser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedAdditiveContext.html">NestedAdditiveContext</a></dt>
+    <dd><p>The parse tree context for the nested additive expression</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a></dt>
+    <dd><p>The result of visiting the nested additive expression</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitNestedBoolean_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitNestedBoolean*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitNestedBoolean_QoreDB_QueryEngine_Parser_Antlr_SqlParser_NestedBooleanContext_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitNestedBoolean(QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedBooleanContext)">
+  VisitNestedBoolean(NestedBooleanContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delegates the visit to the nested boolean expression</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IExpression VisitNestedBoolean(SqlParser.NestedBooleanContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.html">SqlParser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedBooleanContext.html">NestedBooleanContext</a></dt>
+    <dd><p>The parse tree context for the nested boolean expression</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a></dt>
+    <dd><p>The result of visiting the nested boolean expression</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitNestedComparison_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitNestedComparison*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitNestedComparison_QoreDB_QueryEngine_Parser_Antlr_SqlParser_NestedComparisonContext_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitNestedComparison(QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedComparisonContext)">
+  VisitNestedComparison(NestedComparisonContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delegates the visit to the nested comparison expression</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IExpression VisitNestedComparison(SqlParser.NestedComparisonContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.html">SqlParser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedComparisonContext.html">NestedComparisonContext</a></dt>
+    <dd><p>The parse tree context for the nested comparison expression</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a></dt>
+    <dd><p>The result of visiting the nested comparison expression</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitNestedMultiplicative_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitNestedMultiplicative*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitNestedMultiplicative_QoreDB_QueryEngine_Parser_Antlr_SqlParser_NestedMultiplicativeContext_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitNestedMultiplicative(QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedMultiplicativeContext)">
+  VisitNestedMultiplicative(NestedMultiplicativeContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delegates the visit to the nested multiplicative expression</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IExpression VisitNestedMultiplicative(SqlParser.NestedMultiplicativeContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.html">SqlParser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedMultiplicativeContext.html">NestedMultiplicativeContext</a></dt>
+    <dd><p>The parse tree context for the nested multiplicative expression</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a></dt>
+    <dd><p>The result of visiting the nested multiplicative expression</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitNestedPrimary_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitNestedPrimary*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitNestedPrimary_QoreDB_QueryEngine_Parser_Antlr_SqlParser_NestedPrimaryContext_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitNestedPrimary(QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedPrimaryContext)">
+  VisitNestedPrimary(NestedPrimaryContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delegates the visit to the nested primary expression</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IExpression VisitNestedPrimary(SqlParser.NestedPrimaryContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.html">SqlParser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.NestedPrimaryContext.html">NestedPrimaryContext</a></dt>
+    <dd><p>The parse tree context for the nested primary expression</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a></dt>
+    <dd><p>The result of visiting the nested primary expression</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitParenthesizedExpression_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitParenthesizedExpression*"></a>
+
+  <h3 id="QoreDB_QueryEngine_Parser_ExpressionVisitor_VisitParenthesizedExpression_QoreDB_QueryEngine_Parser_Antlr_SqlParser_ParenthesizedExpressionContext_" data-uid="QoreDB.QueryEngine.Parser.ExpressionVisitor.VisitParenthesizedExpression(QoreDB.QueryEngine.Parser.Antlr.SqlParser.ParenthesizedExpressionContext)">
+  VisitParenthesizedExpression(ParenthesizedExpressionContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits a parenthesized expression, effectively unwrapping it</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IExpression VisitParenthesizedExpression(SqlParser.ParenthesizedExpressionContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.html">SqlParser</a>.<a class="xref" href="QoreDB.QueryEngine.Parser.Antlr.SqlParser.ParenthesizedExpressionContext.html">ParenthesizedExpressionContext</a></dt>
+    <dd><p>The parse tree context for the parenthesized expression</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.QueryEngine.Expressions.IExpression.html">IExpression</a></dt>
+    <dd><p>The inner expression, with precedence determined by the parentheses</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/QueryEngine/Parser/ExpressionVisitor.cs/#L11" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

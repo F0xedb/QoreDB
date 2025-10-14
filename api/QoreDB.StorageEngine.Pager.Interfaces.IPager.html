@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Interface IPager | QoreDB Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface IPager | QoreDB Documentation ">
+      
+      <meta name="description" content="Defines the core contract for a pager component, which is responsible for reading and writing fixed-size pages to and from an underlying data stream. This interface abstracts the direct interaction with the data source.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/F0xedb/QoreDB/new/main/apiSpec/new?filename=QoreDB_StorageEngine_Pager_Interfaces_IPager.md&amp;value=---%0Auid%3A%20QoreDB.StorageEngine.Pager.Interfaces.IPager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager">
+
+
+
+  <h1 id="QoreDB_StorageEngine_Pager_Interfaces_IPager" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager" class="text-break">
+Interface IPager  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/StorageEngine/Pager/Interfaces/IPager.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="QoreDB.html">QoreDB</a>.<a class="xref" href="QoreDB.StorageEngine.html">StorageEngine</a>.<a class="xref" href="QoreDB.StorageEngine.Pager.html">Pager</a>.<a class="xref" href="QoreDB.StorageEngine.Pager.Interfaces.html">Interfaces</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>QoreDB.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Defines the core contract for a pager component, which is responsible for
+reading and writing fixed-size pages to and from an underlying data stream.
+This interface abstracts the direct interaction with the data source.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IPager : IDisposable</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable.dispose">IDisposable.Dispose()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="QoreDB_StorageEngine_Pager_Interfaces_IPager_AllocatedPages_" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.AllocatedPages*"></a>
+
+  <h3 id="QoreDB_StorageEngine_Pager_Interfaces_IPager_AllocatedPages" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.AllocatedPages">
+  AllocatedPages
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/StorageEngine/Pager/Interfaces/IPager.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The total amount of pages allocated</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">long AllocatedPages { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="QoreDB_StorageEngine_Pager_Interfaces_IPager_FileSize_" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.FileSize*"></a>
+
+  <h3 id="QoreDB_StorageEngine_Pager_Interfaces_IPager_FileSize" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.FileSize">
+  FileSize
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/StorageEngine/Pager/Interfaces/IPager.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The total size of the database file in bytes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">long FileSize { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="QoreDB_StorageEngine_Pager_Interfaces_IPager_AllocatePage_" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.AllocatePage*"></a>
+
+  <h3 id="QoreDB_StorageEngine_Pager_Interfaces_IPager_AllocatePage" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.AllocatePage">
+  AllocatePage()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/StorageEngine/Pager/Interfaces/IPager.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allocates space for a new page in the data stream and returns its new page ID.
+This typically involves extending the size of the underlying stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int AllocatePage()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The unique identifier for the newly allocated page.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_StorageEngine_Pager_Interfaces_IPager_GetPage_" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.GetPage*"></a>
+
+  <h3 id="QoreDB_StorageEngine_Pager_Interfaces_IPager_GetPage_System_Int32_" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.GetPage(System.Int32)">
+  GetPage(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/StorageEngine/Pager/Interfaces/IPager.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves a page by its ID, utilizing an in-memory cache for performance.
+If the page is present in the cache (a cache hit), it is returned directly.
+If not (a cache miss), it is read from the underlying stream, loaded into the cache, and then returned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">QorePage GetPage(int pageId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pageId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The unique identifier of the page to retrieve.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="QoreDB.StorageEngine.Pager.Models.QorePage.html">QorePage</a></dt>
+    <dd><p>A <a class="xref" href="QoreDB.StorageEngine.Pager.Models.QorePage.html">QorePage</a> object representing the requested page.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_StorageEngine_Pager_Interfaces_IPager_PageExists_" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.PageExists*"></a>
+
+  <h3 id="QoreDB_StorageEngine_Pager_Interfaces_IPager_PageExists_System_Int32_" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.PageExists(System.Int32)">
+  PageExists(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/StorageEngine/Pager/Interfaces/IPager.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks if a page with the specified <code class="paramref">pageId</code> has been allocated in the backing store</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool PageExists(int pageId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pageId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based ID of the page to check</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the page exists; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_StorageEngine_Pager_Interfaces_IPager_ReadPage_" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.ReadPage*"></a>
+
+  <h3 id="QoreDB_StorageEngine_Pager_Interfaces_IPager_ReadPage_System_Int32_" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.ReadPage(System.Int32)">
+  ReadPage(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/StorageEngine/Pager/Interfaces/IPager.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reads the raw byte data of a specific page directly from the underlying data stream.
+This method bypasses any caching layers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">byte[] ReadPage(int pageId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pageId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The unique identifier of the page to read.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>A byte array containing the data of the page. If the page does not exist,
+an empty (all-zero) byte array is returned.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="QoreDB_StorageEngine_Pager_Interfaces_IPager_WritePage_" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.WritePage*"></a>
+
+  <h3 id="QoreDB_StorageEngine_Pager_Interfaces_IPager_WritePage_System_Int32_System_Byte___" data-uid="QoreDB.StorageEngine.Pager.Interfaces.IPager.WritePage(System.Int32,System.Byte[])">
+  WritePage(int, byte[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/StorageEngine/Pager/Interfaces/IPager.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Writes raw byte data for a specific page directly to the underlying data stream.
+This method bypasses any caching layers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void WritePage(int pageId, byte[] data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pageId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The unique identifier of the page to write.</p>
+</dd>
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The byte array of data to be written. The array size must match the pager's page size.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/F0xedb/QoreDB/blob/main/QoreDB/StorageEngine/Pager/Interfaces/IPager.cs/#L10" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
