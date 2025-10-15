@@ -36,7 +36,6 @@ namespace QoreDB.QueryEngine.Parser
 
         public override IExecutionOperator VisitSelect_statement([NotNull] SqlParser.Select_statementContext context)
         {
-            // The table source is now a separate rule in the grammar
             var tableName = context.table_source().table_name.Text;
             
             // For SELECT *, we will let the ProjectionOperator handle it by passing null.

@@ -8,7 +8,6 @@ namespace QoreDB.QueryEngine.Expressions
     /// </summary>
     public class ExpressionEvaluator
     {
-        
         /// <summary>
         /// Evaluates the given expression and returns the result
         /// </summary>

@@ -57,7 +57,6 @@ namespace Qore.UnitTests.QueryEngine.Execution
             var tableInfo = new TableInfo(tableName, new List<ColumnInfo> { new("Id", typeof(int)) }, 1);
             _mockCatalog.Setup(c => c.GetTable(tableName)).Returns(tableInfo);
 
-            // THE FIX: We must mock the call to GetTableTree that the TableScanOperator makes.
             var mockTree = new Mock<IBPlusTree<int, byte[]>>();
             mockTree.Setup(t => t.GetAllValues()).Returns(new List<byte[]>()); // Return an empty list of values
             _mockCatalog.Setup(c => c.GetTableTree<int>(tableName, out tableInfo)).Returns(mockTree.Object);

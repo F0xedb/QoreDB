@@ -1,5 +1,3 @@
-// QoreDB/QueryEngine/Optimizer/Rules/PredicatePushdownRule.cs
-
 using QoreDB.QueryEngine.Execution.Operators;
 using QoreDB.QueryEngine.Interfaces;
 

@@ -1,5 +1,3 @@
-// QoreDB/QueryEngine/Optimizer/Rules/ProjectionPushdownRule.cs
-
 using QoreDB.QueryEngine.Execution.Operators;
 using QoreDB.QueryEngine.Expressions;
 using QoreDB.QueryEngine.Optimizer.Visitors;

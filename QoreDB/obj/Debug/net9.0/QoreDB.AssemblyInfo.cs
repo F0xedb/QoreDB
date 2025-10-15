@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QoreDB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e930b0e118300c32b683dcd3b25b618bdbb0d2f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("QoreDB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QoreDB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

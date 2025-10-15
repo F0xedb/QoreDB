@@ -112,22 +112,21 @@ namespace Qore.UnitTests
             result.Rows.Should().BeEmpty();
         }
 
-        // Note: A full test for SELECT with data would require implementing the data retrieval
-        // logic in the TableScanOperator. For now, this test validates the pipeline.
+        // TODO: A full test for SELECT with data would need to be written
+        // For now, this test validates the pipeline.
         [Test]
         public void Execute_SelectWithProjection_ReturnsCorrectStructure()
         {
             // Arrange
             _db.Execute("CREATE TABLE Users (Id INT, Name STRING, Age INT);");
 
-            // In a real scenario, we would insert data here.
+            // Insert data here once select TableScanOperator is implemented
             // _db.Execute("INSERT INTO Users (Id, Name, Age) VALUES (1, 'Bob', 30);");
 
             // Act
             var result = _db.Execute("SELECT Name, Id FROM Users;") as RowsQueryResult;
 
             // Assert
-            // This confirms the projection operator works, even if no rows are returned yet.
             result.Should().NotBeNull();
             result.Rows.Should().BeEmpty();
         }
@@ -301,7 +300,7 @@ namespace Qore.UnitTests
         public void Execute_InvalidSqlSyntax_ThrowsArgumentException()
         {
             // Act
-            Action act = () => _db.Execute("CREATE TABEL Users (Id INT);"); // Misspelled keyword
+            Action act = () => _db.Execute("CREATE TABEL Users (Id INT);");
 
             // Assert
             act.Should().Throw<ArgumentException>().WithMessage("Invalid SQL syntax: *");
